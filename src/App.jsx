@@ -8,23 +8,23 @@ function App() {
   const router = createBrowserRouter ([
     {
       path: "/",
-      element: "<Landing />",
+      element: "Landing",
     },
     {
-      path: "login",
-      element: "<Login />",
+      path: "logIn",
+      element: "Login",
     },
     {
       path: "signup",
-      element: "<SignUp />",
+      element: "SignUp",
     },
     {
       path: "dashboard",
-      element: "<Dashboard />",
+      element: "Dashboard",
     },
     {
       path: "preview",
-      element: "<Preview />",
+      element: "Preview",
     }
   ]);
 

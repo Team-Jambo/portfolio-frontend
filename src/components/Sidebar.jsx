@@ -18,12 +18,12 @@ const Sidebar = () => {
             <span className="bg-[#487180] text-white p-2 rounded-full">
               {icon}
             </span>
-            <span className="text-white">{text}</span>
+            <span className="text-white hover:text-[#0A524F]">{text}</span>
           </Link>
         ))}
       </div>
-      <button className="flex gap-x-4 item-center mt-auto hover:bg-[#0A524F] hover:text-white hover:rounded-md p-2">
-        <span className="bg-[#0A524F] text-white p-2  rounded-full">
+      <button className="flex gap-x-4 item-center mt-auto hover:bg-[#0A524F] hover:text-[#0A524F] hover:rounded-md p-2">
+        <span className=" text-white p-2  rounded-full">
           <LogOut className="" />
         </span>
         <span>Logout</span>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Form } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -25,18 +24,7 @@ const Login = () => {
             className="h-10 w-full px-2 py-1 outline-transparent border-[#2d6599] border-2 rounded-lg "
           />
         </div>
-        
-      
-
-
-
       </form>
-      <div>
-        
-      </div>
-      <div>
-        <Form />
-      </div>
     </div>
   )
 }

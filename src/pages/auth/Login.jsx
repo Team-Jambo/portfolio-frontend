@@ -47,6 +47,9 @@ const Login = () => {
             </div>
           </div>
         </form>
+        <div>
+          <button>Login Using google</button>
+        </div>
       </div>
       <LoginForm />
     </div>

@@ -14,42 +14,42 @@ export const K = {
     {
       icon: <LayoutDashboard />,
       text: "Home",
-      link: "/dashbord/home",
+      link: "home",
     },
     {
       icon: <FileSliders />,
       text: "About",
-      link: "/dashbord/about",
+      link: "/dashboard/about",
     },
     {
       icon: <BookCopy />,
       text: "Services",
-      link: "/dashbord/services",
+      link: "/dashboard/services",
     },
     {
       icon: <GraduationCap />,
       text: "Education",
-      link: "/dashbord/education",
+      link: "/dashboard/education",
     },
     {
       icon: <CopyPlus />,
       text: "Experience",
-      link: "/dashbord/experience",
+      link: "/dashboard/experience",
     },
     {
       icon: <BriefcaseBusiness />,
       text: "Work",
-      link: "/dashbord/work",
+      link: "/dashboard/work",
     },
     {
       icon: <MessageSquareCode />,
       text: "Blog",
-      link: "/dashbord/blog",
+      link: "/dashboard/blog",
     },
     {
       icon: <UserRoundCheck />,
       text: "Contact",
-      link: "/dashbord/contact",
+      link: "/dashboard/contact",
     },
   ],
 };

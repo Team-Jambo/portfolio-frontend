@@ -14,6 +14,7 @@ import Work from "./pages/dashboard/pages/work";
 import Blog from "./pages/dashboard/pages/blog";
 import Contact from "./pages/dashboard/pages/contact";
 import Preview from "./pages/preview";
+import About from "./pages/dashboard/pages/about";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,6 +41,10 @@ function App() {
         {
           path: "home",
           element: <Home />,
+        },
+        {
+          path: "about",
+          element: <About />,
         },
         {
           path: "skills",

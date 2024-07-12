@@ -1,4 +1,4 @@
-import React from 'react'
+
 import image from "../../assets/images/banner.webp"
 import man from "../../assets/images/personone.jpg"
 import { FacebookIcon, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, TwitchIcon } from 'lucide-react'

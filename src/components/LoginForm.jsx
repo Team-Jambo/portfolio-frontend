@@ -10,54 +10,56 @@ const LoginForm = () => {
 
   return (
 
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-      <div>
-        <div>
+    <form onSubmit={handleSubmit(onSubmit)} className="">
+      <div className="">
+        <div className="flex flex-col justify-center w-60 ">
           <label
             htmlFor="email"
-            className="font-semibold">
+            className="font-semibold text-sm ">
             Email
           </label>
           <input
             id="email"
             type="email"
             {...register("email", {
-              required: "Email Address is required"})}
+              required: "Email Address is required"
+            })}
             placeholder="Enter your Email Address"
-            className="border-2"
+            className="border-2 "
           />
           {errors.email && (
             <p className="text-red-500">{errors.email.message}</p>)}
         </div>
 
-        <div>
+        <div className="flex flex-col justify-center w-60">
           <label
             htmlFor="password"
-            className="font-semibold">
+            className="font-semibold text-sm py-2">
             Password
           </label>
           <input
             id="password"
             type="password"
             {...register("password", {
-              required: "Password is required"})}
-             placeholder="Enter your password"
+              required: "Password is required"
+            })}
+            placeholder="Enter your password"
             className="border-2"
           />
           {errors.password && (
             <p className="text-red-500">{errors.password.message}</p>)}
         </div>
-        
+
         <button
-        type="submit"
-        className="flex bg-blue-950 gap-x-2 w-40 rounded-md items-center text-white font-mono"
+          type="submit"
+          className="flex justify-around bg-[#252549] w-60 rounded-md text-white font-semibold px-10"
         >
-          Login
+          Log In
         </button>
         <div>
           <p>Don't have an Account?</p>
-          <Link to="/Signup" className="underline">
-          SignUp
+          <Link to="signup" className="underline">
+            SignUp
           </Link>
         </div>
 

@@ -1,23 +1,41 @@
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import log from "../../assets/images/newone.jpg"
 import { apiLogin } from "../../services/auth";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  console.log(isSubmitting);
+
+  const navigate = useNavigate()
+
+
+  const { register, 
+    handleSubmit, 
+    formState: { errors }, 
+  } = useForm();
 
   const onSubmit = async (data) => {
     console.log(data);
+    setIsSubmitting(true);
+
     try {
       const res = await apiLogin({
-        email: data.email, 
+        userName: data.firstName,
         password: data.password
       })
-      console.log("Response", res)
-      console.log("Second: I got called")
+      console.log("Response", res.data);
+      // redirect user to dashboard
+      navigate("/dashboard")
 
 
     } catch (error) {
       console.log(error)
+    }
+    finally {
+      setIsSubmitting(false)
     }
 
   };
@@ -29,7 +47,7 @@ const Login = () => {
       </div>
 
       <div className="flex flex-col rounded-lg">
-      <div className="w-50%">
+        <div className="w-50%">
           <h1 className="flex justify-around text-3xl font-bold p-10"> Welcome back</h1>
           <p className="flex justify-around text-sm font-semibold  text-[#0B4459]">Login with your personal information </p>
         </div>
@@ -80,10 +98,8 @@ const Login = () => {
             type="submit"
             className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
           >
-            Log In
+            {isSubmitting ? "Loading..." : "Login"}
           </button>
-          
-          
           <div className="flex flex-row text-sm font-semibold justify-evenly pt-4">
             <p>Don't Have An Account?</p>
             <button className="text-orange-500 animate-pulse">Sign Up</button>

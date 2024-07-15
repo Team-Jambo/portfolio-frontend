@@ -1,23 +1,55 @@
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import log from "../../assets/images/newone.jpg"
+import { apiLogin } from "../../services/auth";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  console.log(isSubmitting);
+
+  const navigate = useNavigate()
+
+
+  const { register, 
+    handleSubmit, 
+    formState: { errors }, 
+  } = useForm();
+
+  const onSubmit = async (data) => {
     console.log(data);
+    setIsSubmitting(true);
+
+    try {
+      const res = await apiLogin({
+        userName: data.firstName,
+        password: data.password
+      })
+      console.log("Response", res.data);
+      // redirect user to dashboard
+      navigate("/dashboard")
+
+
+    } catch (error) {
+      console.log(error)
+    }
+    finally {
+      setIsSubmitting(false)
+    }
+
   };
 
   return (
-    <div className="flex justify-evenly bg-white rounded-lg pr-5">
-      <div className="w-1/2 relative mr-10 ">
+    <div className="flex flex-row justify-center bg-white rounded-lg pt-20">
+      <div className="w-50% relative mr-10 ">
         <img src={log} alt="login image" className="w-full" />
       </div>
 
-      <div className="= w-1/2 rounded-lg">
-      <div className="flex flex-col">
-          <h1 className="flex justify-center text-3xl font-bold p-10"> Welcome back</h1>
-          <p className="flex justify-center text-sm font-semibold pb-5 text-[#0B4459]">Login with your personal information </p>
+      <div className="flex flex-col rounded-lg">
+        <div className="w-50%">
+          <h1 className="flex justify-around text-3xl font-bold p-10"> Welcome back</h1>
+          <p className="flex justify-around text-sm font-semibold  text-[#0B4459]">Login with your personal information </p>
         </div>
         <form
           className="flex flex-col max-w-md mx-auto pt-5"
@@ -57,7 +89,7 @@ const Login = () => {
                 minLength: 8,
               })}
             />
-            {errors.firstName && (
+            {errors.password && (
               <p className="text-red-500">{errors.password.message}</p>
             )}
             <p className="flex justify-end text-sm ">Forgot password?</p>
@@ -66,10 +98,8 @@ const Login = () => {
             type="submit"
             className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
           >
-            Log In
+            {isSubmitting ? "Loading..." : "Login"}
           </button>
-          
-          
           <div className="flex flex-row text-sm font-semibold justify-evenly pt-4">
             <p>Don't Have An Account?</p>
             <button className="text-orange-500 animate-pulse">Sign Up</button>

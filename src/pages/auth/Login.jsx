@@ -1,23 +1,37 @@
 import { useForm } from "react-hook-form";
 import log from "../../assets/images/newone.jpg"
+import { apiLogin } from "../../services/auth";
 
 const Login = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
+    try {
+      const res = await apiLogin({
+        email: data.email, 
+        password: data.password
+      })
+      console.log("Response", res)
+      console.log("Second: I got called")
+
+
+    } catch (error) {
+      console.log(error)
+    }
+
   };
 
   return (
-    <div className="flex justify-evenly bg-white rounded-lg pr-5">
-      <div className="w-1/2 relative mr-10 ">
+    <div className="flex flex-row justify-center bg-white rounded-lg pt-20">
+      <div className="w-50% relative mr-10 ">
         <img src={log} alt="login image" className="w-full" />
       </div>
 
-      <div className="= w-1/2 rounded-lg">
-      <div className="flex flex-col">
-          <h1 className="flex justify-center text-3xl font-bold p-10"> Welcome back</h1>
-          <p className="flex justify-center text-sm font-semibold pb-5 text-[#0B4459]">Login with your personal information </p>
+      <div className="flex flex-col rounded-lg">
+      <div className="w-50%">
+          <h1 className="flex justify-around text-3xl font-bold p-10"> Welcome back</h1>
+          <p className="flex justify-around text-sm font-semibold  text-[#0B4459]">Login with your personal information </p>
         </div>
         <form
           className="flex flex-col max-w-md mx-auto pt-5"
@@ -57,7 +71,7 @@ const Login = () => {
                 minLength: 8,
               })}
             />
-            {errors.firstName && (
+            {errors.password && (
               <p className="text-red-500">{errors.password.message}</p>
             )}
             <p className="flex justify-end text-sm ">Forgot password?</p>

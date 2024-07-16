@@ -3,18 +3,18 @@ import log from "../../assets/images/newone.jpg"
 import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  console.log(isSubmitting);
 
   const navigate = useNavigate()
 
 
-  const { register, 
-    handleSubmit, 
-    formState: { errors }, 
+  const { register,
+    handleSubmit,
+    formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -26,18 +26,18 @@ const Login = () => {
         userName: data.firstName,
         password: data.password
       })
-      console.log("Response", res.data);
-      // redirect user to dashboard
-      navigate("/dashboard")
-
+      console.log("Response", res.data)
+      setTimeout(() => {
+        navigate("/dashboard")
+      }, 5000)
 
     } catch (error) {
       console.log(error)
+      toast.error(error)
     }
     finally {
       setIsSubmitting(false)
     }
-
   };
 
   return (
@@ -98,7 +98,15 @@ const Login = () => {
             type="submit"
             className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
           >
-            {isSubmitting ? "Loading..." : "Login"}
+            {isSubmitting ? <ColorRing
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="color-ring-loading"
+              wrapperStyle={{}}
+              wrapperClass="color-ring-wrapper"
+              colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+            /> : "Login"}
           </button>
           <div className="flex flex-row text-sm font-semibold justify-evenly pt-4">
             <p>Don't Have An Account?</p>

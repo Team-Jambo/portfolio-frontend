@@ -13,8 +13,7 @@ const Contact = ({ onClick }) => {
           className="bg-[#0B4459] text-white px-4 py-2 ml-auto rounded-lg flex flex-gap-x-3"
           onClick={onClick}
         >
-          <MessageSquareMore />
-          Chart Now
+          Chart Now <MessageSquareMore className="ml-20" />
         </button>
       </div>
     </>

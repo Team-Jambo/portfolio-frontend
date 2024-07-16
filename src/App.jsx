@@ -16,6 +16,7 @@ import About from "./pages/dashboard/pages/about";
 import AddSkill from "./pages/dashboard/pages/addSkill";
 import AddExperience from "./pages/dashboard/pages/addExperience";
 import Addwork from "./pages/dashboard/pages/addWork";
+import Achievements from "./pages/dashboard/pages/achievements";
 
 function App() {
   const router = createBrowserRouter([
@@ -42,6 +43,10 @@ function App() {
         {
           path: "overview",
           element: <Overview />,
+        },
+        {
+          path: "about",
+          element: <About />,
         },
         {
           path: "skills",
@@ -76,12 +81,12 @@ function App() {
           element: <Addwork />,
         },
         {
-          path: "contact",
-          element: <Contact />,
+          path: "achievements",
+          element: <Achievements />,
         },
         {
-          path: "about",
-          element: <About />,
+          path: "contact",
+          element: <Contact />,
         },
       ],
     },

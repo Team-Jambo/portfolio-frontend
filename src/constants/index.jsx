@@ -50,6 +50,11 @@ export const K = {
       text: "Work",
       link: "/dashboard/work",
     },
+    {
+      icon: <BriefcaseBusiness />,
+      text: "Achievements",
+      link: "/dashboard/achievements",
+    },
 
     {
       icon: <UserRoundCheck />,

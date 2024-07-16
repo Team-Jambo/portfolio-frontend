@@ -18,6 +18,9 @@ export const K = {
       icon: <LayoutDashboardIcon />,
       text: "Overview",
       link: "/dashboard/overview",
+      icon: <LayoutDashboard />,
+      text: "Home",
+      link: "home",
     },
     {
       icon: <FileSliders />,
@@ -51,6 +54,7 @@ export const K = {
       link: "/dashboard/work",
     },
     {
+
       icon: <BriefcaseBusiness />,
       text: "Achievements",
       link: "/dashboard/achievements",
@@ -60,6 +64,7 @@ export const K = {
       icon: <UserRoundCheck />,
       text: "Contact",
       link: "/dashboard/contact",
+
     },
   ],
   OVERVIEW: [
@@ -128,6 +133,7 @@ export const K = {
       responsibilitiesOne: " Participated in agile software development",
       responsibilitiesTwo:
         "Assisted the web development team with all aspects of website and application design.",
+
     },
   ],
 };

@@ -15,7 +15,7 @@ import Preview from "./pages/preview";
 import About from "./pages/dashboard/pages/about";
 import AddSkill from "./pages/dashboard/pages/addSkill";
 import AddExperience from "./pages/dashboard/pages/addExperience";
-import Addwork from "./pages/dashboard/pages/addwork";
+import Addwork from "./pages/dashboard/pages/addWork";
 
 function App() {
   const router = createBrowserRouter([

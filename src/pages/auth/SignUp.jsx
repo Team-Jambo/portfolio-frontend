@@ -1,22 +1,18 @@
 import { useForm } from "react-hook-form";
 import SignupImage from "../../assets/image/picture.jpeg";
-import { apiSignUp } from "../../services/auth";
+import { apiSignUp, apiCheckUserNameExist } from "../../services/auth";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { ColorRing } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { debounce } from "lodash";
 
-
-
 const SignUp = () => {
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [UsernameAvailable, setUsernameAvailable] = useState(false);
   const [UsernameNotAvailable, setUsernameNotAvailable] = useState(false);
   const [isUsernameLoading, setIsUsernameLoading] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const {
     register,
@@ -25,14 +21,12 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-
   const checkUserName = async (userName) => {
-    
     setIsUsernameLoading(true);
     try {
       const res = await apiCheckUserNameExist(userName);
-      console.log(res.data)
-      const user = res.data.user
+      console.log(res.data);
+      const user = res.data.user;
       if (user) {
         setUsernameNotAvailable(true);
         setUsernameAvailable(false);
@@ -40,29 +34,27 @@ const SignUp = () => {
         setUsernameAvailable(true);
         setUsernameNotAvailable(false);
       }
-
     } catch (error) {
       console.log(error);
       toast.error("An error occured!");
     } finally {
-      setIsUsernameLoading(true)
+      setIsUsernameLoading(true);
     }
   };
 
-  const userNameWatch = watch("userName")
-  
+  const userNameWatch = watch("userName");
 
   useEffect(() => {
     const debouncedSearch = debounce(async () => {
       if (userNameWatch) {
         await checkUserName(userNameWatch);
       }
-    }, 1000)
+    }, 1000);
 
     debouncedSearch();
     return () => {
       debouncedSearch.cancel();
-    }
+    };
   }, [userNameWatch]);
 
   const onSubmit = async (data) => {
@@ -87,9 +79,8 @@ const SignUp = () => {
       toast.success(res.data);
 
       setTimeout(() => {
-        navigate("/login")
-      }, 5000)
-
+        navigate("/login");
+      }, 5000);
     } catch (error) {
       console.log(error);
       toast.error("An error occured!");
@@ -187,9 +178,11 @@ const SignUp = () => {
             )}
             <div className="flex items-center gap-2">
               {isUsernameLoading && <Loader />}
-              {UsernameAvailable && (<p className="text-green-500">Username is available!</p>
+              {UsernameAvailable && (
+                <p className="text-green-500">Username is available!</p>
               )}
-              {UsernameNotAvailable && (<p className="text-red-500">Username is already taken!</p>
+              {UsernameNotAvailable && (
+                <p className="text-red-500">Username is already taken!</p>
               )}
             </div>
           </div>
@@ -254,12 +247,9 @@ const SignUp = () => {
             className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
           >
             {isSubmitting ? <Loader /> : "Signup"}
-
           </button>
           <p className=" flex justify-center font-bold">OR</p>
-          <button
-            className="bg-white text-[#0B4459] w-full py-1 rounded-md font-semibold"
-          >
+          <button className="bg-white text-[#0B4459] w-full py-1 rounded-md font-semibold">
             Sign up with Google
           </button>
         </form>

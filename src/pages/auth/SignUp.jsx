@@ -43,7 +43,7 @@ const SignUp = () => {
 
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error("An error occured!");
     } finally {
       setIsUsernameLoading(true)
     }
@@ -92,7 +92,7 @@ const SignUp = () => {
 
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error("An error occured!");
     } finally {
       setIsSubmitting(false);
     }

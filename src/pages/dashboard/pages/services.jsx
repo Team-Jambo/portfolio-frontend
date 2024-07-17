@@ -3,7 +3,7 @@ import PagesLayout from "../layouts/pagesLayout";
 const Services = () => {
   return (
     <PagesLayout headerText="Services" buttonText="Add New Service">
-      <span>Achievements List here</span>
+      <span>Services List here</span>
     </PagesLayout>
   );
 };

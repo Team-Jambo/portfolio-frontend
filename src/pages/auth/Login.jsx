@@ -3,18 +3,19 @@ import log from "../../assets/images/newone.jpg"
 import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Loader from "../../components/Loader";
 
 const Login = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  console.log(isSubmitting);
 
   const navigate = useNavigate()
 
 
-  const { register, 
-    handleSubmit, 
-    formState: { errors }, 
+  const { register,
+    handleSubmit,
+    formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -24,20 +25,20 @@ const Login = () => {
     try {
       const res = await apiLogin({
         userName: data.firstName,
-        password: data.password
+        password: data.password,
       })
-      console.log("Response", res.data);
-      // redirect user to dashboard
-      navigate("/dashboard")
-
+      console.log("Response", res.data)
+      setTimeout(() => {
+        navigate("/dashboard")
+      }, 5000)
 
     } catch (error) {
       console.log(error)
+      toast.error("An error occured!");
     }
     finally {
       setIsSubmitting(false)
     }
-
   };
 
   return (
@@ -98,7 +99,7 @@ const Login = () => {
             type="submit"
             className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
           >
-            {isSubmitting ? "Loading..." : "Login"}
+            {isSubmitting ? <Loader /> : "Login"}
           </button>
           <div className="flex flex-row text-sm font-semibold justify-evenly pt-4">
             <p>Don't Have An Account?</p>

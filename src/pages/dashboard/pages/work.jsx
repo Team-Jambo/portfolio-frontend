@@ -20,7 +20,6 @@ const Work = () => {
               location,
               startDate,
               endDate,
-              responsibilities,
               responsibilitiesOne,
               responsibilitiesTwo,
             },
@@ -28,13 +27,13 @@ const Work = () => {
           ) => (
             <div
               key={index}
-              className="h-96 bg-[#9BCEE6] text-[#08355D] font-bold shadow-md rounded-xl flex flex-col p-5"
+              className="h-96 bg-[#9BCEE6] text-[#0B4459] font-bold shadow-md rounded-xl flex flex-col p-5"
             >
               <div className="ml-auto flex gap-x-2 ">
-                <span className="bg-[#08355D]  p-3 rounded-full">
+                <span className="bg-[#F79726]  p-3 rounded-full">
                   <Edit className="text-white size-5" />
                 </span>
-                <span className=" bg-[#08355D] p-3 rounded-full">
+                <span className=" bg-[#F79726] p-3 rounded-full">
                   <TrashIcon className=" text-white size-5" />
                 </span>
               </div>

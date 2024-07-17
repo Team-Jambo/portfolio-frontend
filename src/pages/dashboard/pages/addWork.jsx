@@ -10,10 +10,10 @@ const Addwork = () => {
           (such as new job) and work <br />
           anniversaries.Updates can take up to 2 hours. Learn more about sharing
           profile changes.{" "}
+          <button className="ml-[280px]">
+            <PlusCircleIcon />
+          </button>
         </p>
-        <button>
-          <PlusCircleIcon />
-        </button>
       </div>
 
       <div className="= flex flex-col justify-center rounded-lg">

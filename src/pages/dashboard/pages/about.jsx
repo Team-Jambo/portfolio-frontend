@@ -1,26 +1,38 @@
 import { Link } from "react-router-dom";
 import PagesLayout from "../layouts/pagesLayout";
+import { InfoIcon } from "lucide-react";
 
 const About = () => {
   return (
     <>
-      <PagesLayout headerText="About" buttonText="Add to About">
-        <span>WHO AM I?</span>
-      </PagesLayout>
+      <PagesLayout headerText="About" buttonText="Add to About"></PagesLayout>
 
-      <div className=" flex  flex-col p-7 leading-10">
-        <p className="p-[5em] text-[#B0B0B0] text-[18px] font-thin font-serif w-[90%]">
-          <span className="text-blue-400 text-[18px] font-thin">
-            A web designer and programer
-          </span>{" "}
-          &nbsp;on her way she met a copy.that where it came from it would have
-          been rewritten a thousand times and everything that was left from its
-          origin would be the word "and" and the Little Blind Text should turn
-          around and return to its own, safe country. Even the all-powerful
-          Pointing has no control about the blind texts it is an almost
-          unorthographic life One day however a small line of blind text by the
-          name of Lorem Ipsum decided to leave for the far World of Grammar.
+      <div className="flex flex-col border-b-[2px] border-dashed 	border-top-color:rgba(11, 68, 89, 1);">
+        <h1 className="flex text-xl">
+          About Me <InfoIcon className="ml-[58rem] size-7" />
+        </h1>
+      </div>
+      <div className="flex flex-col w-1/2">
+        <h3 className="text-xl font-medium pt-5 ">Software Developer</h3>
+        <p className="pr-3 border-b-[1px] border-dashed leading-7 pb-5 tracking-wide">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+          dignissim convallis metus. Donec sit amet libero nunc. Praesent
+          dignissim odio felis, eu eleifend ipsum rhoncus id. Nam porttitor elit
+          feugiat venenatis viverra. Suspendisse pulvinar, leo ac ultricies
+          porttitor, lectus diam fringilla dolor, et bibendum mauris augue
+          euismod eros. Vivamus efficitur pretium massa, vel blandit magna
+          iaculis sit amet. Nulla vehicula risus sed turpis euismod, quis porta
+          turpis feugiat. Vestibulum id mi vitae sapien blandit interdum et sit
+          amet sem. Duis sem odio, dignissim non sollicitudin vitae, elementum
+          id metus. Nulla sollicitudin viverra diam, nec elementum urna
+          imperdiet in. Vestibulum efficitur eu est eu rutrum.
         </p>
+      </div>
+
+      <div className="flex flex-col w-1/2">
+        <h3 className="text-xl font-medium pt-7">Personal Infomation</h3>
+      </div>
+      <div>
         <h1 className="text-black text-xl max-sm:text-lg font-bold">
           EXPERIENCE
         </h1>

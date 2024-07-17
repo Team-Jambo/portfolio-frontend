@@ -4,6 +4,7 @@ import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Loader from "../../components/Loader";
 
 const Login = () => {
 
@@ -24,7 +25,7 @@ const Login = () => {
     try {
       const res = await apiLogin({
         userName: data.firstName,
-        password: data.password
+        password: data.password,
       })
       console.log("Response", res.data)
       setTimeout(() => {
@@ -33,7 +34,7 @@ const Login = () => {
 
     } catch (error) {
       console.log(error)
-      toast.error(error)
+      toast.error("An error occured!");
     }
     finally {
       setIsSubmitting(false)
@@ -98,15 +99,7 @@ const Login = () => {
             type="submit"
             className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
           >
-            {isSubmitting ? <ColorRing
-              visible={true}
-              height="80"
-              width="80"
-              ariaLabel="color-ring-loading"
-              wrapperStyle={{}}
-              wrapperClass="color-ring-wrapper"
-              colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-            /> : "Login"}
+            {isSubmitting ? <Loader /> : "Login"}
           </button>
           <div className="flex flex-row text-sm font-semibold justify-evenly pt-4">
             <p>Don't Have An Account?</p>

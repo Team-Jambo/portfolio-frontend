@@ -5,16 +5,18 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { ColorRing } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader";
+import { debounce } from "lodash";
+
+
 
 const SignUp = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const [UsernameAvailable, setUsernameAvailable] = useState(false);
   const [UsernameNotAvailable, setUsernameNotAvailable] = useState(false);
-
+  const [isUsernameLoading, setIsUsernameLoading] = useState(false);
   const navigate = useNavigate()
-
 
   const {
     register,
@@ -23,37 +25,49 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const checkUserName = async(userName) => {
 
+  const checkUserName = async (userName) => {
+    
+    setIsUsernameLoading(true);
     try {
       const res = await apiCheckUserNameExist(userName);
       console.log(res.data)
       const user = res.data.user
-      if(user){
+      if (user) {
         setUsernameNotAvailable(true);
-      }else{
+        setUsernameAvailable(false);
+      } else {
         setUsernameAvailable(true);
+        setUsernameNotAvailable(false);
       }
 
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
+    } finally {
+      setIsUsernameLoading(true)
     }
   };
 
   const userNameWatch = watch("userName")
-  console.log(userNameWatch);
+  
 
   useEffect(() => {
-    if(userNameWatch){
-      checkUserName(userNameWatch);
+    const debouncedSearch = debounce(async () => {
+      if (userNameWatch) {
+        await checkUserName(userNameWatch);
+      }
+    }, 1000)
+
+    debouncedSearch();
+    return () => {
+      debouncedSearch.cancel();
     }
   }, [userNameWatch]);
 
-  
   const onSubmit = async (data) => {
     console.log(data);
     setIsSubmitting(true);
-
     let payload = {
       firstName: data.firstName,
       lastName: data.lastName,
@@ -71,7 +85,7 @@ const SignUp = () => {
       const res = await apiSignUp(payload);
       console.log(res.data);
       toast.success(res.data);
-      
+
       setTimeout(() => {
         navigate("/login")
       }, 5000)
@@ -171,12 +185,13 @@ const SignUp = () => {
             {errors.userName && (
               <p className="text-red-500">{errors.userName.message}</p>
             )}
-            {
-              UsernameAvailable && (<p className="text-green-500">Username is available!</p>
-            )}
-            {
-              UsernameNotAvailable && (<p className="text-red-500">Username is already taken!</p>
-            )}
+            <div className="flex items-center gap-2">
+              {isUsernameLoading && <Loader />}
+              {UsernameAvailable && (<p className="text-green-500">Username is available!</p>
+              )}
+              {UsernameNotAvailable && (<p className="text-red-500">Username is already taken!</p>
+              )}
+            </div>
           </div>
 
           <div className="mb-5">
@@ -238,15 +253,7 @@ const SignUp = () => {
             type="submit"
             className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
           >
-            {isSubmitting ? <ColorRing
-              visible={true}
-              height="80"
-              width="80"
-              ariaLabel="color-ring-loading"
-              wrapperStyle={{}}
-              wrapperClass="color-ring-wrapper"
-              colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-            />: "Signup"}
+            {isSubmitting ? <Loader /> : "Signup"}
 
           </button>
           <p className=" flex justify-center font-bold">OR</p>

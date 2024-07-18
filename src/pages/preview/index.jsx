@@ -1,8 +1,7 @@
 
 import image from "../../assets/images/banner.webp"
 import man from "../../assets/images/personone.jpg"
-import { BriefcaseBusinessIcon, FacebookIcon, GithubIcon, HandIcon, InstagramIcon, LaptopIcon, LinkedinIcon, MailIcon, MouseIcon, PenBoxIcon, ShipWheelIcon, TwitchIcon, User2Icon } from 'lucide-react';
-import Test from "../../components/Test/Test";
+import { BriefcaseBusinessIcon, FacebookIcon, GithubIcon, Globe2Icon, HandIcon, InstagramIcon, LaptopIcon, LinkedinIcon, MailIcon, MouseIcon, PenBoxIcon, Phone, ShipWheelIcon, SpeechIcon, TextIcon, TextQuoteIcon, TwitchIcon, User2Icon } from 'lucide-react';
 import { ComputerDesktopIcon, DevicePhoneMobileIcon, LightBulbIcon } from "@heroicons/react/16/solid";
 import { BugAntIcon } from "@heroicons/react/16/solid";
 import { TimerIcon } from "lucide-react";
@@ -14,7 +13,10 @@ import workthree from "../../assets/images/workthree.png";
 import weekfour from "../../assets/images/weekfour.png";
 import fell from "../../assets/images/fell.png";
 import fall from "../../assets/images/fall.jpg";
-
+import blogo from "../../assets/images/blogo.png";
+import blogtw from "../../assets/images/blogtw.png";
+import blogt from "../../assets/images/blogt.jpg";
+import blog from "../../assets/images/blog.png";
 
 
 const Preview = () => {
@@ -35,7 +37,7 @@ const Preview = () => {
             <p className='font-semibold pt-3 '>Frontend Dev, UI/UX designer, Graphic Designer and Copywriter3</p>
             <p className='text-sm'>When it comes to writing my web developer technical bio, I want to make sure that I start <br />with a strong opening statement. I want to introduce myself and my skills in a way that is clear, concise, and catches the reader's attention. I am a web developer with years</p>
             <div>
-              <button className='w-40 bg-white border-2 shadow-xl border-black mt-3 hover:-translate-x-2 transition motion-reduce:hover:translate-x-4 text-black text-md font-semibold rounded-0 mb-6'>DOWNLOAD CV</
+              <button className='w-40 bg-white border-2  border-black mt-3 hover:-translate-x-2 transition motion-reduce:hover:translate-x-4 text-black text-md font-semibold rounded-0 mb-6'>DOWNLOAD CV</
               button>
             </div>
 
@@ -56,12 +58,12 @@ const Preview = () => {
       <section className="flex flex-col pt-20 bg-[#FFFDFC]">
         <span>
           <h2 className="text-4xl font-bold p-10">ABOUT ME</h2>
-          <hr className='bg-[#FAE7D3] h-1' />
+
         </span>
         <div className="flex flex-row ">
           <div className="flex flex-col pt-4 pl-5 gap-5 ">
             <button><GraduationCapIcon className='size-6 text-[#E64D40] hover: animate-pulse' /></button>
-            <button><BugAntIcon className='size-6 text-[#E64D40] hover: animate-spin' /></button>
+            <button><BugAntIcon className='size-6 text-[#E64D40] hover:' /></button>
             <button><TimerIcon className='size-6 text-[#E64D40] hover: animate-pulse' /></button>
             <button><ComputerDesktopIcon className='size-6 text-[#E64D40] hover: animate-pulse' /></button>
           </div>
@@ -70,12 +72,12 @@ const Preview = () => {
           </div>
           <img src={about} alt="phone" className="w-[50%] h-[20%]" />
         </div>
+        <hr className='bg-[#FAE7D3] h-1' />
       </section>
 
       <section className="flex flex-col bg-white shadow-lg ">
         <span >
           <h2 className="text-4xl font-bold p-10">SKILLS</h2>
-          <hr className='bg-[#FAE7D3] h-1' />
         </span>
         <div className="flex flex-row justify-between items-center gap-6 p-10 ">
           <span className="flex flex-col">
@@ -130,11 +132,11 @@ const Preview = () => {
       </span>
       <span>
         <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+        <hr className='bg-[#FAE7D3] h-1' />
       </span>
 
       <span>
         <h1 className="text-4xl font-bold p-10">MY PROJECTS</h1>
-        <hr className='bg-blue-950' />
       </span>
       <div className="grid grid-cols-3 gap-4 p-10 shadow-md ">
         <img src={fell} alt="first" />
@@ -176,7 +178,7 @@ const Preview = () => {
       </div>
 
       <span>
-        <h1>EXPERIENCES</h1>
+        <h1 className="text-4xl font-bold p-10">MY EXPERIENCES</h1>
         <hr className='bg-blue-950' />
       </span>
       <span>
@@ -190,36 +192,77 @@ const Preview = () => {
         <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
       </span>
       <span>
-        <h1 className="text-4xl font-bold p-10">BLOG</h1>
+        <h1 className="text-4xl font-bold p-10">RECENT BLOG</h1>
         <hr className='bg-blue-950' />
       </span>
+
+      <div className=" grid grid-cols-4 gap-4 p-10">
+        <div className="container bg-white rounded-lg shadow-2">
+          <img src={blogo} alt="blog" className="" />
+          <p className="text-xs font-thin p-2">MARCH 14 | UI DESIGN</p>
+          <p className="text-12 font-bold p-2">WHAT USERS REALLY NEED</p>
+          <p className="text-md p-2">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+          <TextIcon />
+        </div>
+        <div className="container  bg-white rounded-lg shadow-2">
+          <img src={blogt} alt="blog" />
+          <p className="text-xs font-thin p-2">JUNE 27 | WEB DEVELOPMENT</p>
+          <p className="text-12 font-bold p-2">DEAR NEW WEB DEVELOPER</p>
+          <p className="text-md p-2">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+          <TextIcon />
+        </div>
+        <div className="container  bg-white rounded-lg shadow-2">
+          <img src={blogtw} alt="blog" />
+          <p className="text-xs font-thin p-2">MARCH 14 | WEB DESIGN</p>
+          <p className="text-12 font-bold p-2">DEAR NEW WEB DEVELOPER</p>
+          <p className="text-md p-2">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+          <TextIcon />
+        </div>
+        <div className="container bg-white rounded-lg shadow-2 h-45vh">
+          <img src={blog} alt="blog" className="" />
+          <p className="text-xs font-thin p-2">MARCH 14 | WEB DESIGN</p>
+          <p className="text-12 font-bold p-2">DEAR NEW WEB DEVELOPER</p>
+          <p className="text-md p-2">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+          <TextIcon />
+        </div>
+      </div>
+
       <span>
-        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
-      </span>
-      <span>
-        <h1 className="text-4xl font-bold p-10">CONTACT</h1>
-        <hr className='bg-blue-950' />
-      </span>
-      <span>
-        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+        <h1 className="text-4xl font-bold p-10">CONTACT ME</h1>
       </span>
 
-
-      <div>
-        <h1>
-          I am happy to know you
-          that 300+ projects done sucessfully!
-        </h1>
-        <button>HIRE ME</button>
-      </div>
-      <div>
-        <h1>HERE ARE SOME OF MY EXPERTISE</h1>
-        <p></p>
-      </div>
       <span>
-        <p>MY SKILLS</p>
+        <p>Let's keep in touch</p>
       </span>
-    </div>
+
+      <div className="flex flex-row p-20 ">
+        
+        <div className="flex flex-col gap-7 ">
+          <Globe2Icon className="text-violet-950 hover:" />
+          <MailIcon />
+          <Phone />
+          <FacebookIcon />
+          <LinkedinIcon />
+          <GithubIcon />
+        </div>
+        <div className="flex flex-col gap-7 pl-10">
+          <button>www.ruthieboat.org</button>
+          <button>ruthieboat@hotmail.com</button>
+          <p>+1 23 456 7890</p>
+          <p>Ruthie Boat</p>
+          <p>Ruth Boateng</p>
+          <p>Ruthie Boat</p>
+        </div>
+        <div className="flex flex-col gap-7 ">
+          <p>Name</p>
+          <p>Email</p>
+          <p>Subject</p>
+          <p>Message</p>
+          <button className="bg-[#0A524F] text-white px-6 py-2 ml-auto rounded-lg flex-gap-x-2">SEND MESSAGE</button>
+        </div>
+      </div>
+
+    </div >
   )
 };
 

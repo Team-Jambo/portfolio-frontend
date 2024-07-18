@@ -27,9 +27,6 @@ const Landing = () => {
             <input type="Search" className='relative w-full h-12 border-gray-500 border-2 rounded-3xl pl-10 pr-5 hover:shadow-2xl' placeholder='Search...' />
             <SearchIcon size={28} className='absolute pl-1 text-[#290F66] font-semibold' />
           </span>
-          <div className='flex justify-center mt-5 animate-bounce h-6 ...'>
-            <button><ArrowBigDownIcon className=' size-[28px] ml-15 text-black bg-slate-200 rounded-full ' /></button>
-          </div>
         </div>
       </div>
     </>

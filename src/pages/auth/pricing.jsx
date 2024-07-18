@@ -37,10 +37,10 @@ const Pricing = () => {
         </div>
         <div className='p-8 bg-white w-80 mt-10 rounded-3xl'>
           <span className='flex flex-row gap-2 justify-center'>
-          <p className='text-2xl font-bold text-orange-600'>Recommended</p>
-          <ThumbsUpIcon className='text-orange-600 size-70'/>
+            <p className='text-2xl font-bold text-orange-600'>Recommended</p>
+            <ThumbsUpIcon className='text-orange-600 size-70' />
           </span>
-          
+
           <p>A team of up to 10 developers*</p>
           <h1 className='font-bold'>$ 695 /per month</h1>
           <p className='pb-5'>Transferable annual license with unlimited deployment</p>
@@ -62,7 +62,7 @@ const Pricing = () => {
         </div>
         <div className='p-8 bg-white w-80 mt-10 rounded-3xl'>
           <p>A team of more than 10 developers*</p>
-          <h1 className='font-bold'>$ 1095 /per month</h1>
+          <h1 className='font-bold'>$ 1,095 /per month</h1>
           <p className='pb-5'>Transferable annual license with unlimited deployment</p>
           <button className='bg-blue-950 text-white p-2 rounded-2xl font-bold'>BUY NOW</button>
 

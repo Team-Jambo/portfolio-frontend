@@ -9,6 +9,8 @@ import {
   GraduationCap,
   HandHelpingIcon,
   LayoutDashboardIcon,
+  LogOut,
+  SeparatorVerticalIcon,
   SettingsIcon,
   Sparkles,
   UserRoundCheck,
@@ -62,6 +64,11 @@ export const K = {
       text: "Contact",
       link: "/dashboard/contact",
     },
+    {
+      icon: <LogOut />,
+      text: "Logout",
+      link: "/signup",
+    },
   ],
   OVERVIEW: [
     {
@@ -83,6 +90,11 @@ export const K = {
       icon: <Award />,
       text: "Achievements",
       total: 40,
+    },
+    {
+      icon: <SeparatorVerticalIcon />,
+      text: "Socials",
+      total: 4,
     },
   ],
 

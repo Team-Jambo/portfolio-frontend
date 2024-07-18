@@ -7,9 +7,9 @@ const About = () => {
     <>
       <PagesLayout buttonText="Add to About"></PagesLayout>
 
-      <div className="flex flex-col border-b-[2px] border-dashed 	border-top-color:rgba(11, 68, 89, 1);">
+      <div className="flex flex-col border-b-[2px] border-dashed border-top-color:rgba(11, 68, 89, 1);">
         <h1 className="flex text-xl">
-          About Me <InfoIcon className="ml-[58rem] size-7" />
+          About Me <InfoIcon className="ml-auto size-7" />
         </h1>
       </div>
       <div className="flex flex-col w-1/2">

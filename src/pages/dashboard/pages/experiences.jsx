@@ -5,6 +5,7 @@ import { Edit, TrashIcon } from "lucide-react";
 
 const Experiences = () => {
   const navigate = useNavigate();
+
   return (
     <PagesLayout
       headerText="Experiences"

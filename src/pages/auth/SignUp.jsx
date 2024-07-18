@@ -77,7 +77,6 @@ const SignUp = () => {
       const res = await apiSignUp(payload);
       console.log(res.data);
       toast.success(res.data);
-
       setTimeout(() => {
         navigate("/login");
       }, 5000);

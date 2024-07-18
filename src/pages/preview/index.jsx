@@ -149,7 +149,7 @@ const Preview = () => {
       </span>
 
       <span>
-        <h1 className="text-4xl font-bold p-10">MY EDUCATION</h1>
+        <h1 className="text-4xl font-bold p-10">EDUCATION</h1>
         <hr className='bg-blue-950' />
       </span>
 
@@ -176,28 +176,28 @@ const Preview = () => {
       </div>
 
       <span>
-        <h1>BLOG</h1>
+        <h1>EXPERIENCES</h1>
         <hr className='bg-blue-950' />
       </span>
       <span>
         <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
       </span>
       <span>
-        <h1>MY CONTACT</h1>
+        <h1 className="text-4xl font-bold p-10">ACHIEVEMENTS</h1>
         <hr className='bg-blue-950' />
       </span>
       <span>
         <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
       </span>
       <span>
-        <h1>MY EXPERTISE</h1>
+        <h1 className="text-4xl font-bold p-10">BLOG</h1>
         <hr className='bg-blue-950' />
       </span>
       <span>
         <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
       </span>
       <span>
-        <h1>MY EXPERTISE</h1>
+        <h1 className="text-4xl font-bold p-10">CONTACT</h1>
         <hr className='bg-blue-950' />
       </span>
       <span>
@@ -221,6 +221,6 @@ const Preview = () => {
       </span>
     </div>
   )
-}
+};
 
 export default Preview

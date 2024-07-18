@@ -4,9 +4,7 @@ import PagesLayout from "../layouts/pagesLayout";
 const Contact = ({ onClick }) => {
   return (
     <>
-      <PagesLayout headerText="Contact" buttonText="Add New Contact">
-        <span>Contact List here</span>
-      </PagesLayout>
+      <PagesLayout buttonText="Add New Contact"></PagesLayout>
 
       <div className="p-2 flex-col gap-y-16">
         <button

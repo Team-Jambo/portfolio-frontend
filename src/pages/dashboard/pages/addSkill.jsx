@@ -6,7 +6,7 @@ const AddSkill = () => {
     <div className="flex flex-col justify-center p-2 ">
       <div className="flex items-center">
         <h1 className="font-bold text-[#08355D] text-2xl">
-          <ArrowLeft /> Add Skills
+          <ArrowLeft /> Add Skill
         </h1>
       </div>
     </div>

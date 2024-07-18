@@ -197,7 +197,7 @@ const SignUp = () => {
               id="email"
               type="text"
               placeholder="Enter your email address"
-              className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
+              className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2 "
               {...register("email", { required: "Email is required" })}
             />
             {errors.email && (

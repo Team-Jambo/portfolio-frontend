@@ -5,7 +5,7 @@ import { InfoIcon } from "lucide-react";
 const About = () => {
   return (
     <>
-      <PagesLayout headerText="About" buttonText="Add to About"></PagesLayout>
+      <PagesLayout buttonText="Add to About"></PagesLayout>
 
       <div className="flex flex-col border-b-[2px] border-dashed 	border-top-color:rgba(11, 68, 89, 1);">
         <h1 className="flex text-xl">

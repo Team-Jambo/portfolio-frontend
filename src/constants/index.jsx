@@ -1,15 +1,16 @@
+import { SparklesIcon } from "@heroicons/react/16/solid";
 import {
   Award,
-  BookCopy,
   BookText,
   BriefcaseBusiness,
-  BusFrontIcon,
   CopyPlus,
   FileSliders,
   FolderKanbanIcon,
   GraduationCap,
+  HandHelpingIcon,
   LayoutDashboardIcon,
   SettingsIcon,
+  Sparkles,
   UserRoundCheck,
 } from "lucide-react";
 
@@ -31,12 +32,6 @@ export const K = {
       link: "/dashboard/skills",
     },
     {
-      icon: <BookCopy />,
-      text: "Services",
-      link: "/dashboard/services",
-    },
-
-    {
       icon: <GraduationCap />,
       text: "Education",
       link: "/dashboard/education",
@@ -48,13 +43,18 @@ export const K = {
     },
     {
       icon: <BriefcaseBusiness />,
-      text: "Work",
-      link: "/dashboard/work",
+      text: "Projects",
+      link: "/dashboard/projects",
     },
     {
-      icon: <BriefcaseBusiness />,
+      icon: <Sparkles />,
       text: "Achievements",
       link: "/dashboard/achievements",
+    },
+    {
+      icon: <HandHelpingIcon />,
+      text: "Volunteering",
+      link: "/dashboard/volunteering",
     },
 
     {
@@ -108,7 +108,7 @@ export const K = {
       levelOfProfeciency: "30",
     },
   ],
-  WORK: [
+  EXPERIENCES: [
     {
       position: "Position: Junior Web Developer",
       company: "Company: MEST",
@@ -129,6 +129,41 @@ export const K = {
       responsibilitiesOne: " Participated in agile software development",
       responsibilitiesTwo:
         "Assisted the web development team with all aspects of website and application design.",
+    },
+  ],
+  VOLUNTEERING: [
+    {
+      organization: "NADMO",
+      describtion: "Disaster and Humanitarian Relief",
+      skill: "Location: Accra",
+      startDate: "June 2016",
+      endDate: "October 2016",
+      role: "To offer free psychological first aid, trauma counselling and group psychotherapy for diasaster survivors",
+      responsibility:
+        "I volunteered with a team of professionals and NGOs in Accra, Ghana to offer free psychological first aid, trauma counselling and group psychotherapy for survivors, families and the entire community of Amasaman who were involved in the collapsed school building in March 2019.",
+      location: "Accra",
+    },
+    {
+      organization: "LEADIT",
+      describtion: "Eduaction",
+      skill: "Location: Accra",
+      startDate: "March 2016",
+      endDate: "April 2018",
+      role: "Business and Investment Educator",
+      responsibility:
+        "As an LeadIt Student participant, we turn basic needs into business opportunities by embarking on creative projects, building feasible business idea and giving livelihood to set target audience in an economically, socially and environmentally sustainable wayAs an Enactus Student participant, we turn basic needs into business opportunities by embarking on creative projects, building feasible business idea and giving livelihood to set target audience in an economically, socially and environmentally sustainable way. . ",
+      location: "Accra",
+    },
+    {
+      organization: "Heal The World Foundation",
+      describtion: "Children",
+      skill: "Location: Accra",
+      startDate: "March 2015",
+      endDate: "April 2016",
+      role: "Counselor",
+      responsibility:
+        "We focus on facilitating an intentional recovery journey for sexual abuse survivors through our 3 core programs: - Heal, Educate & Empower ",
+      location: "Accra",
     },
   ],
 };

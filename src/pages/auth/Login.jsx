@@ -3,19 +3,30 @@ import log from "../../assets/images/picture.jpeg"
 import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import Loader from "../../components/Loader";
 import { toast } from "react-toastify";
+
+import { toast } from "react-toastify";
+import Loader from "../../components/Loader";
+
 
 const Login = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  console.log(isSubmitting);
 
   const navigate = useNavigate()
+
 
   const { register, 
     handleSubmit, 
     formState: { errors }, 
+
+
+  const { register,
+    handleSubmit,
+    formState: { errors },
+
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -25,24 +36,31 @@ const Login = () => {
     try {
       const res = await apiLogin({
         userName: data.firstName,
-        password: data.password
+        password: data.password,
       })
+
       console.log("Response", res.data);
       localStorage.setItem("accessToken", res.data.accessToken);
 
       toast.success(res.data.message)
+
+      console.log("Response", res.data)
+
       setTimeout(() => {
         navigate("/dashboard")
       }, 5000)
 
     } catch (error) {
       console.log(error)
+
       toast.error("An error occured")
+
+      toast.error("An error occured!");
+
     }
     finally {
       setIsSubmitting(false)
     }
-
   };
 
   return (

@@ -1,6 +1,6 @@
 
 import image from "../../assets/images/banner.webp"
-import man from "../../assets/images/personone.jpg"
+import man from "../../assets/images/damn.jpg"
 import { BriefcaseBusinessIcon, FacebookIcon, GithubIcon, Globe2Icon, HandIcon, InstagramIcon, LaptopIcon, LinkedinIcon, MailIcon, MouseIcon, PenBoxIcon, Phone, ShipWheelIcon, SpeechIcon, TextIcon, TextQuoteIcon, TwitchIcon, User2Icon } from 'lucide-react';
 import { ComputerDesktopIcon, DevicePhoneMobileIcon, LightBulbIcon } from "@heroicons/react/16/solid";
 import { BugAntIcon } from "@heroicons/react/16/solid";
@@ -17,6 +17,9 @@ import blogo from "../../assets/images/blogo.png";
 import blogtw from "../../assets/images/blogtw.png";
 import blogt from "../../assets/images/blogt.jpg";
 import blog from "../../assets/images/blog.png";
+import down from "../../assets/images/download.png";
+import ach from "../../assets/images/twoli.jpg";
+import angel from "../../assets/images/angel.jpg";
 
 
 const Preview = () => {
@@ -29,11 +32,11 @@ const Preview = () => {
         </div>
         <div className='absolute flex flex-row gap-2 justify-evenly'>
           <span className='p-10  '>
-            <img src={man} alt="him" className='w-[200%] shadow-2xl rounded-lg' />
+            <img src={man} alt="him" className='w-[200%] shadow-2xl rounded-2xl' />
           </span>
           <span className='pr-5'>
             <h1 className='text-4xl font-bold pt-12'>Hello,</h1>
-            <h1 className='text-2xl'>I'm Daniel BOATENG</h1>
+            <h1 className='text-2xl pt-3'>I'm Ruth BOATENG</h1>
             <p className='font-semibold pt-3 '>Frontend Dev, UI/UX designer, Graphic Designer and Copywriter3</p>
             <p className='text-sm'>When it comes to writing my web developer technical bio, I want to make sure that I start <br />with a strong opening statement. I want to introduce myself and my skills in a way that is clear, concise, and catches the reader's attention. I am a web developer with years</p>
             <div>
@@ -117,21 +120,9 @@ const Preview = () => {
             <p className="text-sm">Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
           </span>
         </div>
-
-        <div className="">
-          <p className="text-sm"> Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
-        </div>
       </section>
 
-
-
-
       <span>
-        <h1 className="text-4xl font-bold p-10"></h1>
-        <hr className='bg-blue-950' />
-      </span>
-      <span>
-        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
         <hr className='bg-[#FAE7D3] h-1' />
       </span>
 
@@ -146,51 +137,84 @@ const Preview = () => {
         <img src={weekfour} alt="five" />
         <img src={fill} alt="six" />
       </div>
-      <span>
-        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
-      </span>
+
 
       <span>
         <h1 className="text-4xl font-bold p-10">EDUCATION</h1>
         <hr className='bg-blue-950' />
       </span>
 
-      <div className="flex flex-row justify-around  gap-y-4">
+      <div className="flex flex-row justify-around ">
         <span className="">
-          <h2>YEAR</h2>
-          <p>2018-2020</p>
-          <p>2018-2016</p>
-          <p>2016-2014</p>
-          <p>2014-2012</p>
+          <h2 className="py-8 font-bold text-2xl">YEAR</h2>
+          <p className="py-8">2018-2020</p>
+          <p className="py-8">2018-2016</p>
+          <p className="py-8">2016-2014</p>
+          <p className="py-8">2014-2012</p>
         </span>
         <span>
-          <h2>QUALIFICATION</h2>
-          <button className="bg-purple-400 w-full border-2 shadow-xl border-black mt-3 hover:bg-gray-400 motion-reduce:">MASTERS DEGREE IN COMPUTER ENGINEERING</button>
-          <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came </p>
-          <button className="bg-purple-400 w-full">MASTERS DEGREE IN COMPUTER ENGINEERING</button>
-          <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came.</p>
-          <button className="bg-purple-400 w-full">MASTERS DEGREE IN COMPUTER ENGINEERING</button>
-          <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came.</p>
-          <button className="bg-purple-400 w-full">MASTERS DEGREE IN COMPUTER ENGINEERING</button>
-          <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came.</p>
+          <h2 className="py-8 font-bold text-2xl">QUALIFICATION</h2>
+          <span>
+          <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">MASTERS DEGREE IN COMPUTER ENGINEERING</p>
+          <p>University of Ghana </p>
+          </span>
+          <span>
+          <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 "> DEGREE IN COMPUTER ENGINEERING</p>
+          <p>Kwame Nkrumah University of Science and Technology </p>
+          </span>
+          <span>
+          <p className="font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">Training in Web Development</p>
+          <p>MEST Africa</p>
+          </span>
+          <span>
+          <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">MASTERS DEGREE IN COMPUTER ENGINEERING</p>
+          <p>University of Ghana </p>
+          </span>
         </span>
-
       </div>
 
       <span>
         <h1 className="text-4xl font-bold p-10">MY EXPERIENCES</h1>
-        <hr className='bg-blue-950' />
       </span>
-      <span>
-        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+      <span className="flex px-20">
+        <p className="py-5 bg-[#e0d0e6] rounded-lg text-black w-full shadow-xl border-black mt-10 "><strong className="text-orange-600">UI/UX Designer at Envato 2017-2018 <br /></strong>
+        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+      </span>
+      <span className="flex px-20">
+        <p className="py-5 bg-[#e0d0e6] rounded-lg text-black w-full shadow-xl border-black mt-10 "><strong className="text-orange-600">UI/UX Designer at Envato 2017-2018 <br /></strong>
+        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+      </span>
+      <span className="flex px-20">
+        <p className="py-5 bg-[#e0d0e6] rounded-lg text-black w-full shadow-xl border-black mt-10 "><strong className="text-orange-600">Front End Developer at Google Company 2017-2018 <br /></strong>
+        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+      </span>
+      <span className="flex px-20">
+        <p className="py-5 bg-[#e0d0e6] rounded-lg text-black w-full shadow-xl border-black mt-10 "><strong className="text-orange-600">System Analyst 2017-2018 <br /></strong>
+        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
       </span>
       <span>
         <h1 className="text-4xl font-bold p-10">ACHIEVEMENTS</h1>
         <hr className='bg-blue-950' />
       </span>
-      <span>
+      <div className="flex flex-row gap-10">
+        <img src={down}alt="achievement" className="p-10" />
+        <span className="p-10">
         <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
       </span>
+      </div>
+      <div className="flex flex-row gap-10">
+        <img src={ach}alt="achievement" className="p-10" />
+        <span className="p-10">
+        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+      </span>
+      </div>
+      <div className="flex flex-row gap-10">
+        <img src={angel}alt="achievement" className="p-10" />
+        <span className="p-10">
+        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+      </span>
+      </div>
+      
       <span>
         <h1 className="text-4xl font-bold p-10">RECENT BLOG</h1>
         <hr className='bg-blue-950' />
@@ -232,7 +256,7 @@ const Preview = () => {
       </span>
 
       <span>
-        <p>Let's keep in touch</p>
+        <p className="pl-12">Let's keep in touch</p>
       </span>
 
       <div className="flex flex-row p-20 ">
@@ -254,11 +278,11 @@ const Preview = () => {
           <p>Ruthie Boat</p>
         </div>
         <div className="flex flex-col gap-7 ">
-          <p>Name</p>
-          <p>Email</p>
-          <p>Subject</p>
-          <p>Message</p>
-          <button className="bg-[#0A524F] text-white px-6 py-2 ml-auto rounded-lg flex-gap-x-2">SEND MESSAGE</button>
+          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Name:"/>
+          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Email:"/>
+          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Subject:"/>
+          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-12 rounded-lg ml-20" placeholder="Message:"/>
+          <button className="bg-[#e0d0e6] text-black px-6 py-2 ml-auto rounded-lg flex-gap-x-2">SEND MESSAGE</button>
         </div>
       </div>
 

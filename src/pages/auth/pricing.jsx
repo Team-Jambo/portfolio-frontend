@@ -12,7 +12,7 @@ const Pricing = () => {
       </div>
       <div>
         <h1 className='flex justify-center text-orange-100'>Build Value</h1>
-        <button onClick={() => navigate("/signup")} className='flex justify-items-end p-3 text-orange-500 bg-white p-2 rounded-2xl font-bold hover:text-sky-700'>Sign Up</button>
+        <button onClick={() => navigate("/signup")} className='flex justify-items-endtext-orange-500 bg-white p-2 rounded-2xl font-bold hover:text-sky-700'>Sign Up</button>
       </div>
 
 

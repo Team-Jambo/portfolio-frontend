@@ -21,8 +21,7 @@ const Experiences = () => {
               location,
               startDate,
               endDate,
-              responsibilitiesOne,
-              responsibilitiesTwo,
+              responsibilities,
             },
             index
           ) => (
@@ -45,10 +44,7 @@ const Experiences = () => {
                 <span className="text-lg">{startDate}</span>
                 <span className="text-lg">{endDate}</span>
                 <span className=" pt-5 ml-5 text-lg list-item mb-2">
-                  {responsibilitiesOne}
-                </span>
-                <span className="ml-5 text-lg list-item mb-2">
-                  {responsibilitiesTwo}
+                  {responsibilities}
                 </span>
               </div>
             </div>

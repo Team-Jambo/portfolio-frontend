@@ -105,6 +105,7 @@ const AddVolunteering = () => {
             placeholder="location"
             className="h-9 w-[450px] px-2 py-1 outline-transparent bg-whiteborder-gray border-2  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
           >
+            <option value="location">location</option>
             <option value="Accra">Accra</option>
             <option value="Kumasi">Kumai</option>
             <option value="Tarkoradi">Tarkoardi</option>
@@ -117,15 +118,12 @@ const AddVolunteering = () => {
             <option value="Bolgatanga">Bolgatanga</option>
           </select>
         </div>
+        <div className="flex justify-center gap-4">
+          <button className="bg-sky-500 text-white px-4 py-2 rounded-lg">
+            Add Volunteering
+          </button>
+        </div>
       </form>
-      <div className="flex justify-center gap-4">
-        <button className="bg-sky-500 text-white px-4 py-2 rounded-lg">
-          Reset
-        </button>
-        <button className="bg-sky-500 text-white px-4 py-2 rounded-lg ">
-          Save
-        </button>
-      </div>
     </div>
   );
 };

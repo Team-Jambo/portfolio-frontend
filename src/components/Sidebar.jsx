@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="flex flex-col max-h-full w-16 bg-[#04539C] shadow-xl hover:w-64 h-screen transition-all duration-300 ease-in-out pr-8 py-10">
       <span className="text-base font-bold text-zinc-50 text-center  transform scale-100 hover:scale-150 transition-transform duration-300 ease-in-out">
-        Portfolio Hub
+        Jamboree Hub
       </span>
       <div className="flex flex-col  mt-3">
         {K.NAVLINKS.map(({ icon, text, link }, index) => (

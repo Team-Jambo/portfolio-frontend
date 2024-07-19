@@ -1,9 +1,9 @@
-import { SparklesIcon } from "@heroicons/react/16/solid";
 import {
   Award,
   BookText,
   BriefcaseBusiness,
   CopyPlus,
+  FilesIcon,
   FileSliders,
   FolderKanbanIcon,
   GraduationCap,
@@ -60,11 +60,6 @@ export const K = {
     },
 
     {
-      icon: <UserRoundCheck />,
-      text: "Contact",
-      link: "/dashboard/contact",
-    },
-    {
       icon: <LogOut />,
       text: "Logout",
       link: "/signup",
@@ -75,6 +70,11 @@ export const K = {
       icon: <BookText />,
       text: "Skills",
       total: 5,
+    },
+    {
+      icon: <GraduationCap />,
+      text: "Education",
+      total: 4,
     },
     {
       icon: <FolderKanbanIcon />,
@@ -127,10 +127,8 @@ export const K = {
       location: "Location: Accra",
       startDate: "Start Date:  May 2024 - Present",
       endDate: "",
-      responsibilitiesOne:
-        "Translate the business requirements and user stories to derive software design and performance requirements",
-      responsibilitiesTwo:
-        "Develop and maintain websites using popular frameworks, including React, Node.js, MongoDB, Express.js, and Bootstrap",
+      responsibilities:
+        " Translate the business requirements and user stories to derive software design and performance requirements. Develop and maintain websites using popular frameworks, including React, Node.js, MongoDB, Express.js, and Bootstrap",
     },
     {
       position: "Web Development Trainee",
@@ -138,9 +136,18 @@ export const K = {
       location: "Location: Accra",
       startDate: "Start Date: January 2024",
       endDate: "End Date: April 2024",
-      responsibilitiesOne: " Participated in agile software development",
-      responsibilitiesTwo:
-        "Assisted the web development team with all aspects of website and application design.",
+      responsibilities:
+        "Participated in agile software development and assisted the web development team with all aspects of website and application design.",
+    },
+
+    {
+      position: "Creative Analyst",
+      company: "Company: The Synergy Hub",
+      location: "Location: Accra",
+      startDate: "Start Date: May 2018",
+      endDate: "End Date: December 2023",
+      responsibilities:
+        "Directed writes to regularly write about topics spanning careers, performance, business and professional success, in Accra’s most read news outlet and Managed a team of creatives that placed our website on Time square for a month",
     },
   ],
   VOLUNTEERING: [
@@ -176,6 +183,140 @@ export const K = {
       responsibility:
         "We focus on facilitating an intentional recovery journey for sexual abuse survivors through our 3 core programs: - Heal, Educate & Empower ",
       location: "Accra",
+    },
+  ],
+  PROJECTS: [
+    {
+      projectName: "BOLIVARD STAYS WEBSITE",
+      describtion:
+        "A one stop shop website for persons looking to buy and rent houses in Ghana",
+      contributors: "Antoinette Amedza & Ruth Boateng",
+      date: "April 2016",
+      skills: "Counselor",
+      productUrl: "Counselor",
+      image: "Counselor",
+    },
+    {
+      projectName: "HMTL",
+      describtion: "100",
+      contributors: "Alex",
+      date: "April 2016",
+      skills: "Counselor",
+      productUrl: "Counselor",
+      image: "Counselor",
+    },
+    {
+      projectName: "HMTL",
+      describtion: "100",
+      contributors: "Alex",
+      date: "April 2016",
+      skills: "Counselor",
+      productUrl: "Counselor",
+      image: "Image",
+    },
+    {
+      projectName: "HMTL",
+      describtion: "100",
+      contributors: "Alex",
+      date: "April 2016",
+      skills: "Counselor",
+      productUrl: "Counselor",
+      image: "Counselor",
+    },
+    {
+      projectName: "HMTL",
+      describtion: "100",
+      contributors: "Alex",
+      date: "April 2016",
+      skills: "Counselor",
+      productUrl: "Counselor",
+      image: "Counselor",
+    },
+    {
+      projectName: "HMTL",
+      describtion: "100",
+      contributors: "Alex",
+      date: "April 2016",
+      skills: "Counselor",
+      productUrl: "Counselor",
+      image: "Counselor",
+    },
+  ],
+  EDUCATION: [
+    {
+      institution: "HARVARD UNIVERSITY",
+      program: "Masters in Computer Science",
+      location: "United Kingdom",
+      grade: "Sobresaliente (Excellent), cum laude",
+      startDate: "September 2022",
+      endDate: "June 2024",
+    },
+    {
+      institution: "LONDON SCHOOL OF ECONOMICS",
+      program: "Masters in Real Estaste Finance",
+      location: "United Kingdom",
+      grade: "Distinction",
+      startDate: "January 2018",
+      endDate: "June 2020",
+    },
+    {
+      institution: "KWAME NRUMAH UNIVERSITY OF SCIENCE & TECH",
+      program: "BSc. Land Economy",
+      location: "Kumasi",
+      grade: "First Class Honours",
+      startDate: "September 2012",
+      endDate: "June 2016",
+    },
+    {
+      institution: "WESLEY GIRLS HIGH SCHOOL",
+      program: "GENERAL ARTS",
+      location: "CapeCost",
+      grade: "Distinction",
+      startDate: "September 2009",
+      endDate: "June 2012",
+    },
+  ],
+  PERSONALINFORMATION: [
+    {
+      name: "Stephen Parker",
+      age: "25 years",
+      resident: "Accra,Ghana",
+      address: "2nd Slate Avenue, Gbawe",
+      email: "stevepark@gmail.com",
+    },
+  ],
+  ACHIEVEMENTS: [
+    {
+      awardType: "Best Creative Team",
+      description:
+        "Outstanding Performance for driving a team  top notch designers over  for project X",
+      image: "",
+      date: " June,2022",
+      nameOfInstitution: "Heal the World Foundation",
+    },
+    {
+      awardType: "Best Employee of the year Aawrd",
+      description:
+        "Best Employee in all service delivery activities for the year 2016",
+      image: "",
+      date: " December,20216",
+      nameOfInstitution: "Heal the World Foundation",
+    },
+    {
+      awardType: "Best Employee of the year Aawrd",
+      description:
+        "Best Employee in all service delivery activities for the year 2016",
+      image: "",
+      date: " December,20216",
+      nameOfInstitution: "Heal the World Foundation",
+    },
+    {
+      awardType: "Best Employee of the year Aawrd",
+      description:
+        "Best Employee in all service delivery activities for the year 2016",
+      image: "",
+      date: " December,20216",
+      nameOfInstitution: "Heal the World Foundation",
     },
   ],
 };

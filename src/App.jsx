@@ -12,12 +12,14 @@ import Contact from "./pages/dashboard/pages/contact";
 import Preview from "./pages/preview";
 import About from "./pages/dashboard/pages/about";
 import AddSkill from "./pages/dashboard/pages/addSkill";
+import AddEducation from "./pages/dashboard/pages/addEducation";
 import AddExperience from "./pages/dashboard/pages/addExperience";
 import Achievements from "./pages/dashboard/pages/achievements";
 import Volunteering from "./pages/dashboard/pages/volunteering";
 import AddVolunteering from "./pages/dashboard/pages/addVolunteering";
 import Projects from "./pages/dashboard/pages/projects";
 import AddProject from "./pages/dashboard/pages/addProject";
+import AddAchievement from "./pages/dashboard/pages/addachievement";
 
 function App() {
   const router = createBrowserRouter([
@@ -62,6 +64,10 @@ function App() {
           element: <Education />,
         },
         {
+          path: "education/add-education",
+          element: <AddEducation />,
+        },
+        {
           path: "experiences",
           element: <Experiences />,
         },
@@ -82,6 +88,10 @@ function App() {
           element: <Achievements />,
         },
         {
+          path: "achievements/add-achievement",
+          element: <AddAchievement />,
+        },
+        {
           path: "contact",
           element: <Contact />,
         },
@@ -89,7 +99,6 @@ function App() {
           path: "volunteering",
           element: <Volunteering />,
         },
-
         {
           path: "volunteering/add-volunteering",
           element: <AddVolunteering />,

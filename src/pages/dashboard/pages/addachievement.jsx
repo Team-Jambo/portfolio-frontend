@@ -1,76 +1,94 @@
 import React from "react";
 
-const AddProject = () => {
+const AddAchievement = () => {
   return (
-    <div className="= flex flex-col justify-center rounded-lg">
-      <form className=" max-w-md mx-60 pt-5">
-        <div className="mb-8">
-          <label
-            htmlFor="awardType"
-            className="block text-[#08355D] font-medium mb-1 ml-4"
-          ></label>
-          AWARD TYPE
-          <input
-            type="text"
-            placeholder="Enter award type"
-            className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
-          />
-        </div>
-
-        <div className="mb-8">
-          <label
-            htmlFor="description"
-            className="block text-[#08355D]font-medium mb-1 ml-4"
-          ></label>
-          DESCRIPTION
-          <input
-            type="text"
-            placeholder="Enter Text"
-            className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
-          />
-        </div>
-        <div className="mb-8">
-          <label
-            htmlFor="image"
-            className="block text-[#08355D]font-medium mb-1 ml-4"
-          ></label>
-          IMAGE
-          <input
-            type="image"
-            placeholder="Browse for Image"
-            className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
-          />
-        </div>
-
-        <div className="mb-8">
-          <label
-            htmlFor="date"
-            className="block text-[#08355D]font-medium mb-1 ml-4"
-          ></label>
-          DATE
-          <input
-            type="text"
-            placeholder="Ex:dd/mm/yy"
-            className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
-          />
-        </div>
-        <div className="mb-8">
-          <label
-            htmlFor="Name of Institution"
-            className="block text-[#08355D]font-medium mb-1 ml-4"
-          ></label>
-          NAME OF INSTITUTION
-          <input
-            type="text"
-            placeholder="Ex:dd/mm/yy"
-            className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
-          />
-        </div>
-        <button className="bg-[#0B4459] text-white px-4 py-2 ml-auto mr-60 rounded-lg flex flex-gap-x-1">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50">
+      <div className="bg-white rounded-lg shadow-lg p-10 w-full max-w-lg">
+        <h1 className="font-bold text-[#2286C9] text-2xl text-center mb-5">
           Add Achievement
-        </button>
-      </form>
+        </h1>
+        <form className="space-y-6 ">
+          <div className="mb-8 text-[#f79626]">
+            <label
+              htmlFor="awardTpye"
+              className="block text-[#2286C9]] font-medium"
+            >
+              {" "}
+              AWARD TYPE
+            </label>
+
+            <input
+              type="text"
+              id="award"
+              placeholder="Enter award type"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
+            />
+          </div>
+
+          <div className="mb-8 ">
+            <label
+              htmlFor="description"
+              className="block font-medium text-[#f79626]"
+            >
+              DESCRIPTION
+            </label>
+
+            <input
+              type="text"
+              id="description"
+              placeholder="Enter description"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
+            />
+          </div>
+
+          <div className="mb-8 ">
+            <label
+              htmlFor="description"
+              className="block font-medium text-[#f79626]"
+            >
+              IMAGE
+            </label>
+
+            <input
+              type="file"
+              id="image"
+              placeholder="Certification here"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
+            />
+          </div>
+          <div className="mb-8 ">
+            <label htmlFor="date" className="block font-medium text-[#f79626]">
+              DATE
+            </label>
+
+            <input
+              type="text"
+              id="date"
+              placeholder="Enter date"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
+            />
+          </div>
+
+          <div className="mb-8">
+            <label htmlFor="grade" className="block font-medium text-[#f79626]">
+              {" "}
+              NAME OF INSTITUTION
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter institution"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
+            />
+          </div>
+
+          <button className="bg-[#2286C9]  text-white px-4 py-2 rounded-lg w-full">
+            Add Education
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
-export default AddProject;
+export default AddAchievement;

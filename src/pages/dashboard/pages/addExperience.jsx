@@ -1,24 +1,13 @@
-import { PlaneIcon } from "lucide-react";
 import React, { useState } from "react";
 
 const AddExperience = () => {
   return (
-    <div className="flex flex-col justify-center p-2 ">
-      <h1 className="font-bold text-[#08355D] text-2xl"> Add Exprience</h1>
-      <div className="bg-[#e0ebf1] mt-10">
-        <p className="text-lg ">
-          Notify network Turn on to notify your network of key profile changes
-          (such as new job) and work <br />
-          anniversaries.Updates can take up to 2 hours. Learn more about sharing
-          profile changes.{" "}
-          <button className="ml-[280px] px-4 py-2 rounded-md">
-            <PlaneIcon />
-          </button>
-        </p>
-      </div>
-
-      <div className="= flex flex-col justify-center rounded-lg">
-        <form className=" max-w-md mx-60 pt-5">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      <div className="bg-white rounded-lg shadow-lg p-10 w-full max-w-lg">
+        <h1 className="font-bold text-[#08355D] text-2xl text-center mb-5">
+          Add Experience
+        </h1>
+        <form className="space-y-6">
           <div className="mb-8">
             <label
               htmlFor="position"
@@ -27,37 +16,40 @@ const AddExperience = () => {
             POSITION
             <input
               type="text"
-              placeholder="Ex:Technical Analyst"
-              className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
+              id="position"
+              placeholder="Ex: Technical Analyst"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
             />
           </div>
 
           <div className="mb-8">
             <label
-              htmlFor="Company"
-              className="block text-[#08355D]font-medium mb-1 ml-4"
+              htmlFor="company"
+              className="block text-[#08355D] font-medium mb-1 ml-4"
             ></label>
             COMPANY
             <input
               type="text"
+              id="company"
               placeholder="Enter company here"
-              className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
             />
           </div>
+
           <div className="mb-8">
             <label
-              htmlFor="Location"
-              className="block text-[#08355D]font-medium mb-1 ml-4"
+              htmlFor="location"
+              className="block text-[#08355D] font-medium mb-1 ml-4"
             ></label>
             LOCATION
             <select
-              id="Location"
-              placeholder="location"
-              className="h-9 w-[450px] px-2 py-1 outline-transparent bg-whiteborder-gray border-2"
+              id="location"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
             >
+              <option value="location">location</option>
               <option value="Accra">Accra</option>
-              <option value="Kumasi">Kumai</option>
-              <option value="Tarkoradi">Tarkoardi</option>
+              <option value="Kumasi">Kumasi</option>
+              <option value="Tarkoradi">Tarkoradi</option>
               <option value="CapeCoast">CapeCoast</option>
               <option value="Suyani">Suyani</option>
               <option value="Koforidua">Koforidua</option>
@@ -67,45 +59,48 @@ const AddExperience = () => {
               <option value="Bolgatanga">Bolgatanga</option>
             </select>
           </div>
+
           <div className="mb-8">
             <label
-              htmlFor="Start Date"
-              className="block text-[#08355D]font-medium mb-1 ml-4"
+              htmlFor="start-date"
+              className="block text-[#08355D] font-medium mb-1 ml-4"
             ></label>
             START DATE
             <input
               type="date"
-              className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
+              id="start-date"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
             />
           </div>
+
           <div className="mb-8">
             <label
-              htmlFor="End Date"
+              htmlFor="end-date"
               className="block text-[#08355D] font-medium mb-1 ml-4"
             ></label>
             END DATE
             <input
               type="date"
-              className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
+              id="end-date"
+              className="h-9 w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded"
             />
           </div>
+
           <div className="mb-8">
             <label
-              htmlFor="Responsibilities"
+              htmlFor="responsibilities"
               className="block text-[#08355D] font-medium mb-1 ml-4"
             ></label>
             RESPONSIBILITIES
             <textarea
-              rows="20"
-              cols="50"
-              name="comment"
-              form="userform"
+              id="responsibilities"
+              rows="4"
               placeholder="Enter text here."
-              className="h-60 w-[450px] px-2 py-1
-            outline-transparent bg-white border-gray border-2"
+              className="w-full px-2 py-1 outline-transparent bg-white border-gray border-2 rounded h-60"
             />
           </div>
-          <button className="bg-[#0B4459] text-white px-4 py-2 ml-auto mr-60 rounded-lg flex flex-gap-x-1">
+
+          <button className="bg-[#f79626] text-white px-4 py-2 rounded-lg w-full">
             Add Experience
           </button>
         </form>

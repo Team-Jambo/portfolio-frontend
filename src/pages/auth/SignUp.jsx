@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import SignupImage from "../../assets/image/picture.jpeg";
-import { apiSignUp, apiCheckUserNameExist } from "../../services/auth";
+import { apiCheckUserNameExist, apiSignUp } from "../../services/auth";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,8 @@ const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [UsernameAvailable, setUsernameAvailable] = useState(false);
   const [UsernameNotAvailable, setUsernameNotAvailable] = useState(false);
-  const [isUsernameLoading, setIsUsernameLoading] = useState(false);
+  const [isUserNameLoading, setIsUsernameLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const {
@@ -28,8 +29,8 @@ const SignUp = () => {
       console.log(res.data);
       const user = res.data.user;
       if (user) {
-        setUsernameNotAvailable(true);
-        setUsernameAvailable(false);
+        setUsernameNotAvailable(false);
+        setUsernameAvailable(true);
       } else {
         setUsernameAvailable(true);
         setUsernameNotAvailable(false);
@@ -38,7 +39,7 @@ const SignUp = () => {
       console.log(error);
       toast.error("An error occured!");
     } finally {
-      setIsUsernameLoading(true);
+      setIsUsernameLoading(false);
     }
   };
 
@@ -75,13 +76,13 @@ const SignUp = () => {
 
     try {
       const res = await apiSignUp(payload);
-      console.log(res.data);
-      toast.success(res.data);
+      console.log("Signup response:", res);
+      toast.success("Signup successful");
       setTimeout(() => {
         navigate("/login");
       }, 5000);
     } catch (error) {
-      console.log(error);
+      console.log("Signup error:", error.response || error.message);
       toast.error("An error occured!");
     } finally {
       setIsSubmitting(false);
@@ -92,11 +93,7 @@ const SignUp = () => {
     <div className="flex justify-evenly bg-[#eeeeee] rounded-lg ">
       <div className="w-1/2 relative mr-10 ">
         <img src={SignupImage} alt="sign-up image" className="w-full" />
-        <div className=" absolute  flex justify-center content-center">
-          <h1> Welcome back </h1>
-          <p>To keep connected with us provide us with your information </p>
-          <button>Signin</button>
-        </div>
+        <div className=" absolute  flex justify-center content-center"></div>
       </div>
 
       <div className="= w-1/2 rounded-lg">
@@ -176,7 +173,7 @@ const SignUp = () => {
               <p className="text-red-500">{errors.userName.message}</p>
             )}
             <div className="flex items-center gap-2">
-              {isUsernameLoading && <Loader />}
+              {isUserNameLoading && <Loader />}
               {UsernameAvailable && (
                 <p className="text-green-500">Username is available!</p>
               )}
@@ -243,12 +240,12 @@ const SignUp = () => {
           </div>
           <button
             type="submit"
-            className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
+            className="bg-[#2286C9] text-white w-full py-1 rounded-md font-semibold"
           >
             {isSubmitting ? <Loader /> : "Signup"}
           </button>
           <p className=" flex justify-center font-bold">OR</p>
-          <button className="bg-white text-[#0B4459] w-full py-1 rounded-md font-semibold">
+          <button className="bg-white text-[#2286C9] w-full py-1 rounded-md font-semibold">
             Sign up with Google
           </button>
         </form>

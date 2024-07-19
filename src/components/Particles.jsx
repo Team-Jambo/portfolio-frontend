@@ -51,7 +51,7 @@ const ParticlesComponent = (props) => {
       },
       particles: {
         color: {
-          value: "#E8710A",
+          value: "#2286C9",
         },
         links: {
           color: "#290F66",
@@ -83,7 +83,7 @@ const ParticlesComponent = (props) => {
           type: "circle",
         },
         size: {
-          value: { min: 4, max: 4 },
+          value: { min: 4, max: 2 },
         },
       },
       detectRetina: true,

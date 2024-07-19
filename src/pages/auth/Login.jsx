@@ -52,9 +52,8 @@ const Login = () => {
       </div>
 
       <div className="flex flex-col rounded-lg">
-
-        <div className="flex w-50% ">
-          <h1 className="flex  text-3xl font-bold p-10"> Welcome back</h1>
+        <div className=" w-50% ">
+          <h1 className="flex  text-3xl font-bold p-20"> Welcome back</h1>
           <p className="flex text-sm font-semibold  text-[#0B4459]">Login with your personal information </p>
         </div>
         <form

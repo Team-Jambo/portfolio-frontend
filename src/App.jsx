@@ -17,6 +17,7 @@ import AddSkill from "./pages/dashboard/pages/addSkill";
 import AddExperience from "./pages/dashboard/pages/addExperience";
 import Addwork from "./pages/dashboard/pages/addWork";
 import Achievements from "./pages/dashboard/pages/achievements";
+import Pricing from "./pages/auth/pricing";
 
 function App() {
   const router = createBrowserRouter([
@@ -31,6 +32,10 @@ function App() {
     {
       path: "signup",
       element: <SignUp />,
+    },
+    {
+      path: "pricing",
+      element: <Pricing />,
     },
     {
       path: "dashboard",

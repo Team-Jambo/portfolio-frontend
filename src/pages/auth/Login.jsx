@@ -1,10 +1,15 @@
 import { set, useForm } from "react-hook-form";
-import log from "../../assets/images/newone.jpg"
+import log from "../../assets/images/picture.jpeg"
 import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import Loader from "../../components/Loader";
+import { toast } from "react-toastify";
+
 import { toast } from "react-toastify";
 import Loader from "../../components/Loader";
+
 
 const Login = () => {
 
@@ -13,9 +18,15 @@ const Login = () => {
   const navigate = useNavigate()
 
 
+  const { register, 
+    handleSubmit, 
+    formState: { errors }, 
+
+
   const { register,
     handleSubmit,
     formState: { errors },
+
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -27,14 +38,25 @@ const Login = () => {
         userName: data.firstName,
         password: data.password,
       })
+
+      console.log("Response", res.data);
+      localStorage.setItem("accessToken", res.data.accessToken);
+
+      toast.success(res.data.message)
+
       console.log("Response", res.data)
+
       setTimeout(() => {
         navigate("/dashboard")
       }, 5000)
 
     } catch (error) {
       console.log(error)
+
+      toast.error("An error occured")
+
       toast.error("An error occured!");
+
     }
     finally {
       setIsSubmitting(false)
@@ -42,15 +64,15 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-row justify-center bg-white rounded-lg pt-20">
-      <div className="w-50% relative mr-10 ">
-        <img src={log} alt="login image" className="w-full" />
+    <div className="flex flex-row justify-between bg-white rounded-lg gap-x-5">
+      <div className="w-50% relative pt-10 ">
+        <img src={log} alt="login image" />
       </div>
 
       <div className="flex flex-col rounded-lg">
-        <div className="w-50%">
-          <h1 className="flex justify-around text-3xl font-bold p-10"> Welcome back</h1>
-          <p className="flex justify-around text-sm font-semibold  text-[#0B4459]">Login with your personal information </p>
+        <div className=" w-50% ">
+          <h1 className="flex  text-3xl font-bold p-20"> Welcome back</h1>
+          <p className="flex text-sm font-semibold  text-[#0B4459]">Login with your personal information </p>
         </div>
         <form
           className="flex flex-col max-w-md mx-auto pt-5"
@@ -87,7 +109,7 @@ const Login = () => {
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
               {...register("password", {
                 required: "password is required",
-                minLength: 8,
+                minLength: 5,
               })}
             />
             {errors.password && (

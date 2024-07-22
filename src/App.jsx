@@ -6,17 +6,20 @@ import Landing from "./pages/landing";
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
 import Skills from "./pages/dashboard/pages/skills";
-import Services from "./pages/dashboard/pages/services";
 import Education from "./pages/dashboard/pages/education";
 import Experiences from "./pages/dashboard/pages/experiences";
-import Work from "./pages/dashboard/pages/work";
 import Contact from "./pages/dashboard/pages/contact";
 import Preview from "./pages/preview";
 import About from "./pages/dashboard/pages/about";
 import AddSkill from "./pages/dashboard/pages/addSkill";
+import AddEducation from "./pages/dashboard/pages/addEducation";
 import AddExperience from "./pages/dashboard/pages/addExperience";
-import Addwork from "./pages/dashboard/pages/addWork";
 import Achievements from "./pages/dashboard/pages/achievements";
+import Volunteering from "./pages/dashboard/pages/volunteering";
+import AddVolunteering from "./pages/dashboard/pages/addVolunteering";
+import Projects from "./pages/dashboard/pages/projects";
+import AddProject from "./pages/dashboard/pages/addProject";
+import AddAchievement from "./pages/dashboard/pages/addachievement";
 import Pricing from "./pages/auth/pricing";
 
 function App() {
@@ -54,10 +57,6 @@ function App() {
           element: <About />,
         },
         {
-          path: "about",
-          element: <About />,
-        },
-        {
           path: "skills",
           element: <Skills />,
         },
@@ -66,12 +65,12 @@ function App() {
           element: <AddSkill />,
         },
         {
-          path: "services",
-          element: <Services />,
-        },
-        {
           path: "education",
           element: <Education />,
+        },
+        {
+          path: "education/add-education",
+          element: <AddEducation />,
         },
         {
           path: "experiences",
@@ -82,20 +81,32 @@ function App() {
           element: <AddExperience />,
         },
         {
-          path: "work",
-          element: <Work />,
+          path: "projects",
+          element: <Projects />,
         },
         {
-          path: "work/add-work",
-          element: <Addwork />,
+          path: "projects/add-project",
+          element: <AddProject />,
         },
         {
           path: "achievements",
           element: <Achievements />,
         },
         {
+          path: "achievements/add-achievement",
+          element: <AddAchievement />,
+        },
+        {
           path: "contact",
           element: <Contact />,
+        },
+        {
+          path: "volunteering",
+          element: <Volunteering />,
+        },
+        {
+          path: "volunteering/add-volunteering",
+          element: <AddVolunteering />,
         },
       ],
     },

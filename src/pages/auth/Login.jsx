@@ -3,17 +3,17 @@ import log from "../../assets/images/newone.jpg";
 import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import Loader from "../../components/Loader";
+import { toast } from "react-toastify";
+
 
 const Login = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
+  const { register, 
+    handleSubmit, 
     formState: { errors },
   } = useForm();
 
@@ -29,22 +29,25 @@ const Login = () => {
       console.log("Response", res.data);
       localStorage.setItem("accessToken", res.data.accessToken);
 
-      toast.success(res.data.message);
+      toast.success(res.data.message)
+
+      console.log("Response", res.data)
+
       setTimeout(() => {
-        navigate("/dashboard");
-      }, 5000);
+        navigate("/dashboard")
+      }, 5000)
     } catch (error) {
       console.log(error);
       toast.error("An error occured!");
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
   };
 
   return (
-    <div className="flex flex-row justify-center bg-white rounded-lg pt-20">
-      <div className="w-50% relative mr-10 ">
-        <img src={log} alt="login image" className="w-full" />
+    <div className="flex flex-row justify-between bg-white rounded-lg gap-x-5">
+      <div className="w-50% relative pt-10 ">
+        <img src={log} alt="login image" />
       </div>
 
       <div className="flex flex-col rounded-lg">
@@ -92,7 +95,7 @@ const Login = () => {
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
               {...register("password", {
                 required: "password is required",
-                minLength: 8,
+                minLength: 5,
               })}
             />
             {errors.password && (

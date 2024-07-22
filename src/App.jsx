@@ -20,6 +20,7 @@ import AddVolunteering from "./pages/dashboard/pages/addVolunteering";
 import Projects from "./pages/dashboard/pages/projects";
 import AddProject from "./pages/dashboard/pages/addProject";
 import AddAchievement from "./pages/dashboard/pages/addachievement";
+import Pricing from "./pages/auth/pricing";
 
 function App() {
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ function App() {
     {
       path: "signup",
       element: <SignUp />,
+    },
+    {
+      path: "pricing",
+      element: <Pricing />,
     },
     {
       path: "dashboard",

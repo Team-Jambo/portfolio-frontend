@@ -24,7 +24,7 @@ const Skills = () => {
 
   const [skills, setSkills] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isDeleting, setIsDeleting] = useState();
+  const [deletingItems, setDeletingItems] = useState();
 
   const fetchSkills = async () => {
     setIsLoading(true);
@@ -40,6 +40,7 @@ const Skills = () => {
   };
 
   const handleDelete = async (_id) => {
+    setDeletingItems((prev) => ({ ...prev, [_id]: true }));
     try {
       const res = await apiDeleteSkill(_id);
       console.log(res.data);
@@ -47,8 +48,11 @@ const Skills = () => {
     } catch (error) {
       console.log(error);
       toast.error("An error occurred");
+    } finally {
+      setDeletingItems((prev) => ({ ...prev, [_id]: false }));
     }
   };
+
   useEffect(() => {
     fetchSkills();
   }, []);
@@ -63,7 +67,7 @@ const Skills = () => {
         <PageLoader />
       ) : (
         <div>
-          {K.SKILLS.length == 0 ? (
+          {skills.length == 0 ? (
             <p>No skill added yet</p>
           ) : (
             <div className="grid grid-cols-2 gap-12 gap-x-20 p-24 pt-9">
@@ -83,7 +87,7 @@ const Skills = () => {
                       onClick={() => handleDelete(_id)`${levelOfProfeciency}`}
                       className="bg-[#08355D] p-3 rounded-full"
                     >
-                      {isDeleting ? (
+                      {deletingItems[_id] ? (
                         <Loader />
                       ) : (
                         <TrashIcon className="text-white size-5" />

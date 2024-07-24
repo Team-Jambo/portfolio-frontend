@@ -8,7 +8,6 @@ import SignUp from "./pages/auth/SignUp";
 import Skills from "./pages/dashboard/pages/skills";
 import Education from "./pages/dashboard/pages/education";
 import Experiences from "./pages/dashboard/pages/experiences";
-import Contact from "./pages/dashboard/pages/contact";
 import Preview from "./pages/preview";
 import About from "./pages/dashboard/pages/about";
 import AddSkill from "./pages/dashboard/pages/addSkill";
@@ -46,10 +45,6 @@ function App() {
       children: [
         {
           index: true,
-          element: <Overview />,
-        },
-        {
-          path: "overview",
           element: <Overview />,
         },
         {
@@ -95,10 +90,6 @@ function App() {
         {
           path: "achievements/add-achievement",
           element: <AddAchievement />,
-        },
-        {
-          path: "contact",
-          element: <Contact />,
         },
         {
           path: "volunteering",

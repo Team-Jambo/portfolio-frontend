@@ -8,8 +8,7 @@ import { apiGetSkills } from "../../../services/skills";
 import { apiGetVolunteering } from "../../../services/volunteering";
 import PageLoader from "../../../components/PageLoader";
 import { motion } from "framer-motion";
-import { delay } from "lodash";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -34,6 +33,13 @@ const Overview = () => {
     experiences: 0,
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [profile] = useOutletContext();
+
+  const getPreviewLink = () => {
+    if (!profile) return "/preview/theody";
+
+    return `/preview/${profile.userName}`;
+  };
 
   const getData = async () => {
     setIsLoading(true);
@@ -53,15 +59,16 @@ const Overview = () => {
         apiGetProjects(),
         apiGetVolunteering(),
       ]);
-      console.log("Toatl skills:", totalSkills);
+
+      console.log("Toatl skills:", totalSkills.data.Skills.length);
 
       const newData = {
-        skills: totalSkills.length,
-        projects: totalProjects.length,
-        achievements: totalAchievements.length,
-        volunteering: totalVolunteering.length,
-        education: totalEducation.length,
-        experiences: totalExperiences.length,
+        skills: totalSkills.length ?? 0,
+        projects: totalProjects.length ?? 0,
+        achievements: totalAchievements.length ?? 0,
+        volunteering: totalVolunteering.length ?? 0,
+        education: totalEducation.length ?? 0,
+        experiences: totalExperiences.length ?? 0,
       };
       console.log(newData);
 
@@ -83,6 +90,13 @@ const Overview = () => {
         <PageLoader />
       ) : (
         <div className="py-40 px-28">
+          <Link
+            to={getPreviewLink()}
+            className="bg-pink text-white ml-auto px-6 py-3 rounded-lg"
+          >
+            View Preview
+          </Link>
+
           <div className="grid grid-cols-3 w-[900px] gap-12 justify-center">
             {K.OVERVIEW.map(({ icon, text, total }, index) => (
               <motion.div
@@ -101,7 +115,6 @@ const Overview = () => {
                 <span className="text-2xl font-semibold pt-9 ml-auto text-[#f79626]">
                   {total}
                 </span>
-                <Link to="preview">PREVIEW</Link>
               </motion.div>
             ))}
           </div>

@@ -3,25 +3,27 @@ import {
   BookText,
   BriefcaseBusiness,
   CopyPlus,
-  FilesIcon,
   FileSliders,
   FolderKanbanIcon,
   GraduationCap,
   HandHelpingIcon,
   LayoutDashboardIcon,
-  LogOut,
   SeparatorVerticalIcon,
   SettingsIcon,
   Sparkles,
-  UserRoundCheck,
 } from "lucide-react";
+import ImageOne from "../assets/images/real-estaste.jpeg";
+import ImageTtwo from "../assets/images/abouta.jpg";
+import ImageThree from "../assets/images/food.jpeg";
+import ImageFour from "../assets/images/fitness.jpg";
+import ImageFive from "../assets/images/cash.jpg";
 
 export const K = {
   NAVLINKS: [
     {
       icon: <LayoutDashboardIcon />,
       text: "Overview",
-      link: "/dashboard/overview",
+      link: "/dashboard",
     },
     {
       icon: <FileSliders />,
@@ -57,12 +59,6 @@ export const K = {
       icon: <HandHelpingIcon />,
       text: "Volunteering",
       link: "/dashboard/volunteering",
-    },
-
-    {
-      icon: <LogOut />,
-      text: "Logout",
-      link: "/signup",
     },
   ],
   OVERVIEW: [
@@ -193,8 +189,8 @@ export const K = {
       contributors: "Antoinette Amedza & Ruth Boateng",
       date: "April 2016",
       skills: "Counselor",
-      productUrl: "Counselor",
-      image: "Counselor",
+      productUrl: "",
+      image: ImageFive,
     },
     {
       projectName: "HMTL",
@@ -203,7 +199,7 @@ export const K = {
       date: "April 2016",
       skills: "Counselor",
       productUrl: "Counselor",
-      image: "Counselor",
+      image: ImageOne,
     },
     {
       projectName: "HMTL",
@@ -212,7 +208,7 @@ export const K = {
       date: "April 2016",
       skills: "Counselor",
       productUrl: "Counselor",
-      image: "Image",
+      image: ImageThree,
     },
     {
       projectName: "HMTL",
@@ -221,7 +217,7 @@ export const K = {
       date: "April 2016",
       skills: "Counselor",
       productUrl: "Counselor",
-      image: "Counselor",
+      image: ImageFour,
     },
     {
       projectName: "HMTL",
@@ -230,7 +226,7 @@ export const K = {
       date: "April 2016",
       skills: "Counselor",
       productUrl: "Counselor",
-      image: "Counselor",
+      image: ImageTtwo,
     },
     {
       projectName: "HMTL",
@@ -239,7 +235,7 @@ export const K = {
       date: "April 2016",
       skills: "Counselor",
       productUrl: "Counselor",
-      image: "Counselor",
+      image: "",
     },
   ],
   EDUCATION: [

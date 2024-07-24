@@ -1,26 +1,24 @@
 import { useForm } from "react-hook-form";
-import SignupImage from "../../assets/image/picture.jpeg";
+import SignupImage from "../../assets/images/picture.jpeg";
 import { apiCheckUserNameExist, apiSignUp } from "../../services/auth";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { debounce } from "lodash";
 
 const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [UsernameAvailable, setUsernameAvailable] = useState(false);
+  const [UserNameAvailable, setUsernameAvailable] = useState(false);
   const [UsernameNotAvailable, setUsernameNotAvailable] = useState(false);
   const [isUserNameLoading, setIsUsernameLoading] = useState(false);
-
   const navigate = useNavigate();
-
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
   const checkUserName = async (userName) => {
     setIsUsernameLoading(true);
@@ -29,8 +27,8 @@ const SignUp = () => {
       console.log(res.data);
       const user = res.data.user;
       if (user) {
-        setUsernameNotAvailable(false);
-        setUsernameAvailable(true);
+        setUsernameNotAvailable(true);
+        setUsernameAvailable(false);
       } else {
         setUsernameAvailable(true);
         setUsernameNotAvailable(false);
@@ -53,6 +51,7 @@ const SignUp = () => {
     }, 1000);
 
     debouncedSearch();
+
     return () => {
       debouncedSearch.cancel();
     };
@@ -67,7 +66,7 @@ const SignUp = () => {
       userName: data.userName,
       email: data.email,
       password: data.password,
-      confirmedPassword: data.confirmedPassword,
+      confirmedPassword: data.confirmPassword,
     };
 
     if (data.otherNames) {
@@ -76,13 +75,14 @@ const SignUp = () => {
 
     try {
       const res = await apiSignUp(payload);
-      console.log("Signup response:", res);
-      toast.success("Signup successful");
+      console.log(res.data);
+      toast.success(res.data);
+
       setTimeout(() => {
         navigate("/login");
       }, 5000);
     } catch (error) {
-      console.log("Signup error:", error.response || error.message);
+      console.log(error);
       toast.error("An error occured!");
     } finally {
       setIsSubmitting(false);
@@ -93,7 +93,6 @@ const SignUp = () => {
     <div className="flex justify-evenly bg-[#eeeeee] rounded-lg ">
       <div className="w-1/2 relative mr-10 ">
         <img src={SignupImage} alt="sign-up image" className="w-full" />
-        <div className=" absolute  flex justify-center content-center"></div>
       </div>
 
       <div className="= w-1/2 rounded-lg">
@@ -112,7 +111,13 @@ const SignUp = () => {
               type="text"
               placeholder="Enter your firstname"
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
-              {...register("firstName", { required: "First name is required" })}
+              {...register("firstName", {
+                required: "First name is required",
+                minLength: {
+                  value: 2,
+                  message: "length must be more than 2 characters",
+                },
+              })}
             />
             {errors.firstName && (
               <p className="text-red-500">{errors.firstName.message}</p>
@@ -132,7 +137,10 @@ const SignUp = () => {
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
               {...register("lastName", {
                 required: "Last name is required",
-                minLength: 2,
+                minLength: {
+                  value: 2,
+                  message: "length must be more than 2 characters",
+                },
               })}
             />
             {errors.lastName && (
@@ -152,9 +160,6 @@ const SignUp = () => {
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
               {...register("otherNames")}
             />
-            {errors.otherNames && (
-              <p className="text-red-500">{errors.otherNames.message}</p>
-            )}
           </div>
           <div className="mb-5">
             <label
@@ -167,14 +172,20 @@ const SignUp = () => {
               type="text"
               placeholder="Enter your username"
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
-              {...register("userName", { required: "User Name is required" })}
+              {...register("userName", {
+                required: "User name is required",
+                minLength: {
+                  value: 2,
+                  message: "length must be more than 2 characters",
+                },
+              })}
             />
             {errors.userName && (
               <p className="text-red-500">{errors.userName.message}</p>
             )}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-x-2">
               {isUserNameLoading && <Loader />}
-              {UsernameAvailable && (
+              {UserNameAvailable && (
                 <p className="text-green-500">Username is available!</p>
               )}
               {UsernameNotAvailable && (
@@ -209,12 +220,15 @@ const SignUp = () => {
             Password
             <input
               id="password"
-              type="text"
+              type="password"
               placeholder="Enter your password"
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
               {...register("password", {
                 required: "Password is required",
-                minLength: 8,
+                minLength: {
+                  value: 8,
+                  message: "Password length must be more than 8 characters",
+                },
               })}
             />
             {errors.password && (

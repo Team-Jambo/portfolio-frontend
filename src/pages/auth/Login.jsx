@@ -1,11 +1,40 @@
 import { useForm } from "react-hook-form";
 import log from "../../assets/images/newone.jpg"
+import { Link, useNavigate } from "react-router-dom";
+import { apiLogin } from "../../services/auth";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import Loader from "./Loader"
 
 const Login = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+
+  const { register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({ reValidateMode: "onBlur", mode: "all" });
+
+  const onSubmit = async (data) => {
     console.log(data);
+    setIsSubmitting(true);
+    try {
+      const res = await apiLogin({
+        email: data.email,
+        password: data.password,
+      });
+      localStorage.setItem("accessToken", res.data.accessToken);
+
+      toast.success(res.data.message);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error);
+      toast.error("An error occured!");
+    } finally {
+      setIsSubmitting(false);
+    }
+
   };
 
   return (
@@ -15,7 +44,7 @@ const Login = () => {
       </div>
 
       <div className="= w-1/2 rounded-lg">
-      <div className="flex flex-col">
+        <div className="flex flex-col">
           <h1 className="flex justify-center text-3xl font-bold p-10"> Welcome back</h1>
           <p className="flex justify-center text-sm font-semibold pb-5 text-[#0B4459]">Login with your personal information </p>
         </div>
@@ -66,13 +95,14 @@ const Login = () => {
             type="submit"
             className="bg-[#0B4459] text-white w-full py-1 rounded-md font-semibold"
           >
-            Log In
+            {isSubmitting ? <Loader /> : "Login"}
           </button>
-          
-          
+
           <div className="flex flex-row text-sm font-semibold justify-evenly pt-4">
             <p>Don't Have An Account?</p>
-            <button className="text-orange-500 animate-pulse">Sign Up</button>
+            <Link to="/signup" className="underline">
+              Sign up
+            </Link>
           </div>
         </form>
       </div>
@@ -80,4 +110,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Login;

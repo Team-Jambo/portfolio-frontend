@@ -1,12 +1,12 @@
 import PagesLayout from "../layouts/pagesLayout";
-import { K } from "../../../constants";
 import { Edit, TrashIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { apiDeleteSkill, apiGetSkills } from "../../../services/skills";
 import PageLoader from "../../../components/PageLoader";
-import Loader from "../../../components/Loader";
 import { toast } from "react-toastify";
+import Loader from "../../../components/Loader";
+
 
 const getBarColor = (level) => {
   if (level >= 75) return "bg-green-600"; // Green for high proficiency
@@ -31,7 +31,7 @@ const Skills = () => {
     try {
       const res = await apiGetSkills();
       console.log(res.data);
-      setSkills(res.data.Skills);
+      setSkills(res.data.skills);
     } catch (error) {
       console.log(error);
     } finally {
@@ -56,6 +56,8 @@ const Skills = () => {
   useEffect(() => {
     fetchSkills();
   }, []);
+  console.log('skills:', skills);
+  console.log('skills length:', skills?.length);
 
   return (
     <PagesLayout
@@ -67,11 +69,11 @@ const Skills = () => {
         <PageLoader />
       ) : (
         <div>
-          {skills.length == 0 ? (
+          {skills?.length == 0 ? (
             <p>No skill added yet</p>
           ) : (
             <div className="grid grid-cols-2 gap-12 gap-x-20 p-24 pt-9">
-              {K.SKILLS.map(({ typeOfSkill, levelOfProfeciency }, index) => (
+              {skills?.map(({ typeOfSkill, levelOfProfeciency }, index) => (
                 <div
                   key={index}
                   className="h-54 w-[380px] bg-[#9BCEE6] text-[#08355D] font-bold shadow-2xl flex flex-col p-6"

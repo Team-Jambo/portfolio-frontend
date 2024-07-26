@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import PagesLayout from "../layouts/pagesLayout";
 import { InfoIcon } from "lucide-react";
-import ImageOne from "../../../assets/images/personone.jpg";
+import ImageOne from "../../../assets/images/profile.png";
 import { K } from "../../../constants";
 
 const About = () => {
   return (
     <PagesLayout buttonText="Add to About">
       <div className="flex flex-col border-b-[2px] border-dashed border-top-color:rgba(11, 68, 89, 1);">
-        <h1 className="flex font-bold text-2xl text-[#f79626] pt-16">
+        <h1 className="flex font-bold text-2xl text-[#f79626] pt-8">
           About Me <InfoIcon className="ml-auto size-7" />
         </h1>
       </div>
@@ -32,7 +32,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className=" mt-10 ml-32">
+        <div className=" mt-10 ml-20">
           <img src={ImageOne} className=" size-[300px] rounded-full" />
         </div>
       </div>

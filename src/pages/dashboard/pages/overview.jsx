@@ -8,6 +8,7 @@ import { apiGetSkills } from "../../../services/skills";
 import { apiGetVolunteering } from "../../../services/volunteering";
 import PageLoader from "../../../components/PageLoader";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 import { Link, useOutletContext } from "react-router-dom";
 
 const fadeInAnimationVariants = {
@@ -36,9 +37,9 @@ const Overview = () => {
   const [profile] = useOutletContext();
 
   const getPreviewLink = () => {
-    if (!profile) return "/preview/theody";
+    if (!profile) return "/preview/jamboree";
 
-    return `/preview/${profile.userName}`;
+    return `/preview/${User.userName}`;
   };
 
   const getData = async () => {
@@ -63,14 +64,13 @@ const Overview = () => {
       console.log("Toatl skills:", totalSkills.data.Skills.length);
 
       const newData = {
-        skills: totalSkills.length ?? 0,
-        projects: totalProjects.length ?? 0,
-        achievements: totalAchievements.length ?? 0,
-        volunteering: totalVolunteering.length ?? 0,
-        education: totalEducation.length ?? 0,
-        experiences: totalExperiences.length ?? 0,
+        skills: totalSkills.data.skills.length ?? 0,
+        projects: totalProjects.data.projects.length ?? 0,
+        achievements: totalAchievements.data.achievements.length ?? 0,
+        volunteering: totalVolunteering.data.volunteering.length ?? 0,
+        education: totalEducation.data.education.length ?? 0,
+        experiences: totalExperiences.data.experience.length ?? 0,
       };
-      console.log(newData);
 
       setData(newData);
     } catch (error) {
@@ -89,16 +89,16 @@ const Overview = () => {
       {isLoading ? (
         <PageLoader />
       ) : (
-        <div className="py-40 px-28">
+        <div className="py-8 px-28">
           <Link
             to={getPreviewLink()}
-            className="bg-pink text-white ml-auto px-6 py-3 rounded-lg"
+            className="bg-primary text-white ml-[770px] px-6 py-3 rounded-lg"
           >
             View Preview
           </Link>
 
           <div className="grid grid-cols-3 w-[900px] gap-12 justify-center">
-            {K.OVERVIEW.map(({ icon, text, total }, index) => (
+            {K.OVERVIEW.map(({ icon, text, id }, index) => (
               <motion.div
                 key={index}
                 className=" bg-white text-[#08355D] font-bold shadow-md rounded-xl flex flex-col p-9 ring-1 ring-slate-900/5  hover:bg-[#9BCEE6] hover:ring-[#9BCEE6] hover:shadow-2xl transition:transform 0.3s ease, box-shadow 0.3s ease; hover:-translate-y-1 hover:scale-110 duration-300 box-border"
@@ -112,9 +112,11 @@ const Overview = () => {
                     {text}
                   </span>
                 </div>
-                <span className="text-2xl font-semibold pt-9 ml-auto text-[#f79626]">
-                  {total}
-                </span>
+                <CountUp
+                  className="text-2xl font-semibold"
+                  start={0}
+                  end={data[id]}
+                />
               </motion.div>
             ))}
           </div>

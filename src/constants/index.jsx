@@ -7,12 +7,11 @@ import {
   FolderKanbanIcon,
   GraduationCap,
   HandHelpingIcon,
+  HelpingHandIcon,
   LayoutDashboardIcon,
-  SeparatorVerticalIcon,
   SettingsIcon,
   Sparkles,
 } from "lucide-react";
-import ImageOne from "../assets/images/real-estaste.jpeg";
 import ImageTtwo from "../assets/images/abouta.jpg";
 import ImageThree from "../assets/images/food.jpeg";
 import ImageFour from "../assets/images/fitness.jpg";
@@ -63,34 +62,39 @@ export const K = {
   ],
   OVERVIEW: [
     {
-      icon: <BookText />,
+      id: "skills",
+      icon: <SettingsIcon/>,
       text: "Skills",
-      total: 5,
+    
     },
     {
+      id: "projects",
+      icon: <BriefcaseBusiness/>,
+      text: "Projects",
+     
+    },
+    {
+      id: "experiences",
+      icon: <CopyPlus />,
+      text: "Experiences",
+    },
+    {
+      id: "educataion",
       icon: <GraduationCap />,
       text: "Education",
-      total: 4,
+    
     },
+   
     {
-      icon: <FolderKanbanIcon />,
-      text: "Projects",
-      total: 10,
-    },
-    {
-      icon: <BriefcaseBusiness />,
-      text: "Experiences",
-      total: 9,
-    },
-    {
-      icon: <Award />,
+      id: "achievements",
+      icon: <Sparkles/>,
       text: "Achievements",
-      total: 40,
+    
     },
     {
-      icon: <SeparatorVerticalIcon />,
-      text: "Socials",
-      total: 4,
+      id: "volunteering",
+      icon: <HelpingHandIcon />,
+      text: "Volunteering",
     },
   ],
 
@@ -118,11 +122,11 @@ export const K = {
   ],
   EXPERIENCES: [
     {
-      position: "Position: Junior Web Developer",
+      position: "Junior Web Developer",
       company: "Company: MEST",
       location: "Location: Accra",
-      startDate: "Start Date:  May 2024 - Present",
-      endDate: "",
+      startDate: "Start Date:  May 2024",
+      endDate: "Present",
       responsibilities:
         " Translate the business requirements and user stories to derive software design and performance requirements. Develop and maintain websites using popular frameworks, including React, Node.js, MongoDB, Express.js, and Bootstrap",
     },
@@ -183,33 +187,33 @@ export const K = {
   ],
   PROJECTS: [
     {
-      projectName: "BOLIVARD STAYS WEBSITE",
-      describtion:
-        "A one stop shop website for persons looking to buy and rent houses in Ghana",
-      contributors: "Antoinette Amedza & Ruth Boateng",
-      date: "April 2016",
-      skills: "Counselor",
-      productUrl: "",
-      image: ImageFive,
-    },
-    {
-      projectName: "HMTL",
-      describtion: "100",
-      contributors: "Alex",
-      date: "April 2016",
-      skills: "Counselor",
-      productUrl: "Counselor",
-      image: ImageOne,
-    },
-    {
-      projectName: "HMTL",
-      describtion: "100",
+      projectName: "Portfilo Hub",
+      describtion: "",
       contributors: "Alex",
       date: "April 2016",
       skills: "Counselor",
       productUrl: "Counselor",
       image: ImageThree,
     },
+    {
+      projectName: "Event Hive",
+      describtion: "An event hosting and booking website in South Sahara Africa",
+      contributors: "Alice and Padike",
+      date: "April 2024",
+      skills: "React & MongoDB",
+      productUrl: "",
+      image: ImageFive,
+    },
+    {
+      projectName: "Boluvard Hills",
+      describtion: "A one stop shop website for persons looking to buy and rent houses in Ghana",
+      contributors: "Sandra & Nelson",
+      date: "October 2023",
+      skills: "HTML,CSS &  JS",
+      productUrl: "",
+      image: "ImageOne",
+    },
+  
     {
       projectName: "HMTL",
       describtion: "100",
@@ -228,15 +232,7 @@ export const K = {
       productUrl: "Counselor",
       image: ImageTtwo,
     },
-    {
-      projectName: "HMTL",
-      describtion: "100",
-      contributors: "Alex",
-      date: "April 2016",
-      skills: "Counselor",
-      productUrl: "Counselor",
-      image: "",
-    },
+    
   ],
   EDUCATION: [
     {
@@ -274,11 +270,11 @@ export const K = {
   ],
   PERSONALINFORMATION: [
     {
-      name: "Stephen Parker",
+      name: "Alice Parker",
       age: "25 years",
       resident: "Accra,Ghana",
       address: "2nd Slate Avenue, Gbawe",
-      email: "stevepark@gmail.com",
+      email: "alicepark@gmail.com",
     },
   ],
   ACHIEVEMENTS: [

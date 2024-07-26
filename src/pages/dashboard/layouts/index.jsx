@@ -1,29 +1,22 @@
+
 import { Link, Navigate, Outlet } from "react-router-dom";
 import Sidebar from "../../../components/Sidebar";
 import { SquareMenu } from "lucide-react";
-import { apiGetProfile } from "../../../services/profile";
 import { useEffect, useState } from "react";
-import { getToken } from "../../../services/config";
-import { toast } from "react-toastify";
+import { getDetails } from "../../../services/config";
 
 const DasboardLayout = () => {
-  const [profile, setProfile] = useState();
+  const [user, setUser] = useState();
 
-  const token = getToken();
-
-  const getUserProfile = async () => {
-    try {
-      const response = await apiGetProfile();
-      const userProfileData = response?.data.profile;
-      setProfile(userProfileData);
-    } catch (error) {
-      toast.error("An error occured");
-    }
-  };
+  const { token, firstName, lastName, userName } = getDetails();
 
   useEffect(() => {
     if (token) {
-      getUserProfile();
+      setUser({
+        firstName,
+        lastName,
+        userName,
+      });
     }
   }, []);
 
@@ -31,11 +24,11 @@ const DasboardLayout = () => {
     return <Navigate to="/login" />;
   }
 
-  const getAvatar = () => {
-    if (!profile) return "N/A";
-    const initials = `${profile.firstName[0]}${profile.lastName[0]}`;
-    return initials.toUpperCase();
-  };
+  // const getAvatar = () => {
+  //   if (!user) return "N/A";
+  //   const initials = `${firstName[0]}${lastName[0]}`;
+  //   return initials.toUpperCase();
+  // };
 
   return (
     <div className="flex bg-[#F3F4F7]">
@@ -45,35 +38,19 @@ const DasboardLayout = () => {
           <span className="p-3 bg-pink text-white rounded-full shadow-md hover:bg-white hover:text-pink">
             <SquareMenu className="size-8" />
           </span>
-          <Link
+          {/* <Link
             to="/dashboard/profile"
             className="ml-auto bg-pink p-4 rounded-full cursor-pointer"
           >
             <span className="text-xl font-semibold text-white">
               {getAvatar()}
             </span>
-          </Link>
+          </Link> */}
         </div>
-        <Outlet context={[profile, setProfile]} />
+        <Outlet context={[user, setUser]} />
       </div>
     </div>
   );
 };
 
 export default DasboardLayout;
-
-// import { Outlet } from "react-router-dom";
-// import Sidebar from "../../../components/Sidebar";
-
-// const DashboardLayout = () => {
-//   return (
-//     <div className="flex">
-//       <Sidebar />
-//       <div className="flex-1 overflow-y-auto h-screen pl-8">
-//         <Outlet />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default DashboardLayout;

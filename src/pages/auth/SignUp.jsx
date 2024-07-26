@@ -72,15 +72,11 @@ const SignUp = () => {
     if (data.otherNames) {
       payload = { ...payload, otherNames: data.otherNames };
     }
-
     try {
       const res = await apiSignUp(payload);
       console.log(res.data);
-      toast.success(res.data);
-
-      setTimeout(() => {
-        navigate("/login");
-      }, 5000);
+      toast.success(res.data.message);
+      navigate("/login");
     } catch (error) {
       console.log(error);
       toast.error("An error occured!");
@@ -90,7 +86,10 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex justify-evenly bg-[#eeeeee] rounded-lg ">
+    <div
+      className="flex justify-evenly bg-[#eeeeee] rounded-lg "
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <div className="w-1/2 relative mr-10 ">
         <img src={SignupImage} alt="sign-up image" className="w-full" />
       </div>

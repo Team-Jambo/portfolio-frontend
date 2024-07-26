@@ -12,7 +12,7 @@ export const apiGetEducationById = async (id) => {
   return apiClient.get(`/education/${id}`);
 };
 
-export const apiUpdateSkill = (id) => {
+export const apiUpdateEducation = (id) => {
   return apiClient.patch(`/education/${id}`);
 };
 

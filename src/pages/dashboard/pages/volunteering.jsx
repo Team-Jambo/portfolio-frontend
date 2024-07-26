@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { K } from "../../../constants";
 import { ArrowBigRightDash, Edit, TrashIcon } from "lucide-react";
@@ -7,6 +7,9 @@ import {
   apiDeleteVolunteering,
   apiGetVolunteering,
 } from "../../../services/volunteering";
+import PageLoader from "../../../components/PageLoader";
+import { toast } from "react-toastify";
+import Loader from "../../../components/Loader";
 
 const Volunteering = () => {
   const navigate = useNavigate();
@@ -19,7 +22,7 @@ const Volunteering = () => {
     try {
       const res = await apiGetVolunteering();
       console.log(res.data);
-      setVolunteering(res.data.Volunteering);
+      setVolunteering(res.data.volunteering);
     } catch (error) {
       console.log(error);
     } finally {

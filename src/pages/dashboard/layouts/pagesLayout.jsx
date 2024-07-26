@@ -2,7 +2,7 @@ import { PlusCircleIcon } from "lucide-react";
 
 const PagesLayout = ({ headerText, buttonText, onClick, children }) => {
   return (
-    <div className="p-10 flex-col gap-16">
+    <div className="px-10 pt-3 flex-col gap-16">
       <div className="flex">
         <h1 className="text-2xl font-bold">{headerText}</h1>
         <button

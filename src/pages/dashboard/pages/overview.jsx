@@ -36,11 +36,11 @@ const Overview = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [profile] = useOutletContext();
 
-  const getPreviewLink = () => {
-    if (!profile) return "/preview/jamboree";
+  // const getPreviewLink = () => {
+  //   if (!profile) return "/preview/jamboree";
 
-    return `/preview/${User.userName}`;
-  };
+  //   return `/preview/${User.userName}`;
+  // };
 
   const getData = async () => {
     setIsLoading(true);
@@ -90,12 +90,12 @@ const Overview = () => {
         <PageLoader />
       ) : (
         <div className="py-8 px-28">
-          <Link
+          {/* <Link
             to={getPreviewLink()}
             className="bg-primary text-white ml-[770px] px-6 py-3 rounded-lg"
           >
             View Preview
-          </Link>
+          </Link> */}
 
           <div className="grid grid-cols-3 w-[900px] gap-12 justify-center">
             {K.OVERVIEW.map(({ icon, text, id }, index) => (

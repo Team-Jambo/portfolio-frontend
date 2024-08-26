@@ -20,9 +20,12 @@ import blog from "../../assets/images/blog.png";
 import down from "../../assets/images/download.png";
 import ach from "../../assets/images/twoli.jpg";
 import angel from "../../assets/images/angel.jpg";
+import { useLoaderData } from "react-router-dom";
 
 
 const Preview = () => {
+  const data = useLoaderData();
+  console.log("🚀 ~ Preview ~ data:", data);
 
   return (
     <div>
@@ -155,20 +158,20 @@ const Preview = () => {
         <span>
           <h2 className="py-8 font-bold text-2xl">QUALIFICATION</h2>
           <span>
-          <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">MASTERS DEGREE IN COMPUTER ENGINEERING</p>
-          <p>University of Ghana </p>
+            <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">MASTERS DEGREE IN COMPUTER ENGINEERING</p>
+            <p>University of Ghana </p>
           </span>
           <span>
-          <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 "> DEGREE IN COMPUTER ENGINEERING</p>
-          <p>Kwame Nkrumah University of Science and Technology </p>
+            <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 "> DEGREE IN COMPUTER ENGINEERING</p>
+            <p>Kwame Nkrumah University of Science and Technology </p>
           </span>
           <span>
-          <p className="font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">Training in Web Development</p>
-          <p>MEST Africa</p>
+            <p className="font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">Training in Web Development</p>
+            <p>MEST Africa</p>
           </span>
           <span>
-          <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">MASTERS DEGREE IN COMPUTER ENGINEERING</p>
-          <p>University of Ghana </p>
+            <p className=" font-bold py-5 bg-[#e0d0e6] text-black w-full shadow-xl border-black mt-3 ">MASTERS DEGREE IN COMPUTER ENGINEERING</p>
+            <p>University of Ghana </p>
           </span>
         </span>
       </div>
@@ -178,43 +181,43 @@ const Preview = () => {
       </span>
       <span className="flex px-20">
         <p className="py-5 bg-[#e0d0e6] rounded-lg text-black w-full shadow-xl border-black mt-10 "><strong className="text-orange-600">UI/UX Designer at Envato 2017-2018 <br /></strong>
-        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+          Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
       </span>
       <span className="flex px-20">
         <p className="py-5 bg-[#e0d0e6] rounded-lg text-black w-full shadow-xl border-black mt-10 "><strong className="text-orange-600">UI/UX Designer at Envato 2017-2018 <br /></strong>
-        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+          Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
       </span>
       <span className="flex px-20">
         <p className="py-5 bg-[#e0d0e6] rounded-lg text-black w-full shadow-xl border-black mt-10 "><strong className="text-orange-600">Front End Developer at Google Company 2017-2018 <br /></strong>
-        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+          Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
       </span>
       <span className="flex px-20">
         <p className="py-5 bg-[#e0d0e6] rounded-lg text-black w-full shadow-xl border-black mt-10 "><strong className="text-orange-600">System Analyst 2017-2018 <br /></strong>
-        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+          Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
       </span>
       <span>
         <h1 className="text-4xl font-bold p-10">ACHIEVEMENTS</h1>
         <hr className='bg-blue-950' />
       </span>
       <div className="flex flex-row gap-10">
-        <img src={down}alt="achievement" className="p-10" />
+        <img src={down} alt="achievement" className="p-10" />
         <span className="p-10">
-        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
-      </span>
+          <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+        </span>
       </div>
       <div className="flex flex-row gap-10">
-        <img src={ach}alt="achievement" className="p-10" />
+        <img src={ach} alt="achievement" className="p-10" />
         <span className="p-10">
-        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
-      </span>
+          <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+        </span>
       </div>
       <div className="flex flex-row gap-10">
-        <img src={angel}alt="achievement" className="p-10" />
+        <img src={angel} alt="achievement" className="p-10" />
         <span className="p-10">
-        <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
-      </span>
+          <p>Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+        </span>
       </div>
-      
+
       <span>
         <h1 className="text-4xl font-bold p-10">RECENT BLOG</h1>
         <hr className='bg-blue-950' />
@@ -260,7 +263,7 @@ const Preview = () => {
       </span>
 
       <div className="flex flex-row p-20 ">
-        
+
         <div className="flex flex-col gap-7 ">
           <Globe2Icon className="text-violet-950 hover:" />
           <MailIcon />
@@ -278,14 +281,13 @@ const Preview = () => {
           <p>Ruthie Boat</p>
         </div>
         <div className="flex flex-col gap-7 ">
-          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Name:"/>
-          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Email:"/>
-          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Subject:"/>
-          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-12 rounded-lg ml-20" placeholder="Message:"/>
+          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Name:" />
+          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Email:" />
+          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-3 rounded-lg ml-20" placeholder="Subject:" />
+          <input type="text" className="bg-[#e0d0e6] text-black px-12 py-12 rounded-lg ml-20" placeholder="Message:" />
           <button className="bg-[#e0d0e6] text-black px-6 py-2 ml-auto rounded-lg flex-gap-x-2">SEND MESSAGE</button>
         </div>
       </div>
-
     </div >
   )
 };

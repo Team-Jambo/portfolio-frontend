@@ -20,6 +20,11 @@ import Projects from "./pages/dashboard/pages/projects";
 import AddProject from "./pages/dashboard/pages/addProject";
 import AddAchievement from "./pages/dashboard/pages/addachievement";
 import Pricing from "./pages/auth/pricing";
+import { apiGetUserDetails } from "./services/preview";
+import AuthLayout from "./pages/auth/authLayout";
+import { toast } from "react-toastify";
+
+
 
 function App() {
   const router = createBrowserRouter([
@@ -28,12 +33,17 @@ function App() {
       element: <Landing />,
     },
     {
-      path: "login",
-      element: <Login />,
-    },
-    {
-      path: "signup",
-      element: <SignUp />,
+      element: <AuthLayout />,
+      children: [
+        {
+          path: "login",
+          element: <Login />,
+        },
+        {
+          path: "signup",
+          element: <SignUp />,
+        },
+      ],
     },
     {
       path: "pricing",
@@ -102,8 +112,19 @@ function App() {
       ],
     },
     {
-      path: "preview",
+      path: "preview/:username",
       element: <Preview />,
+      loader: async ({ params }) => {
+        const username = params.username;
+        try {
+          const response = await apiGetUserDetails(username);
+          const userProfileData = response?.data.user;
+          return userProfileData;
+        } catch (error) {
+          toast.error("An error occured");
+          return null;
+        }
+      },
     },
   ]);
 

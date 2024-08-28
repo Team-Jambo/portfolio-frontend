@@ -1,21 +1,28 @@
 import { set, useForm } from "react-hook-form";
-import log from "../../assets/images/newone.jpg";
+import log from "../../assets/images/pice.jpeg";
 import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const navigate = useNavigate();
 
   const { register, 
     handleSubmit, 
     formState: { errors },
-  } = useForm();
+  } = useForm({ reValidateMode: "onBlur", mode: "all" });
+
+  const addToLocalStorage = (accessToken, user) => {
+    localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("firstName", user.firstName);
+    localStorage.setItem("lastName", user.lastName);
+    localStorage.setItem("userName", user.userName);
+  };
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -23,16 +30,14 @@ const Login = () => {
 
     try {
       const res = await apiLogin({
-        userName: data.firstName,
+        userName: data.userName,
         password: data.password,
       });
-      console.log("Response", res.data);
-      localStorage.setItem("accessToken", res.data.accessToken);
+      console.log(res.data);
 
-      toast.success(res.data.message)
+      addToLocalStorage(res.data.accessToken, res.data.user);
 
-      console.log("Response", res.data)
-
+      toast.success(res.data.message);
       setTimeout(() => {
         navigate("/dashboard")
       }, 5000)
@@ -46,12 +51,12 @@ const Login = () => {
 
   return (
     <div className="flex flex-row justify-between bg-white rounded-lg gap-x-5">
-      <div className="w-50% relative pt-10 ">
+      <div className="w-50%  pt-10 ">
         <img src={log} alt="login image" />
       </div>
 
-      <div className="flex flex-col rounded-lg">
-        <div className="w-50%">
+     
+        <div className="flex flex-col rounded-lg w-50%">
           <h1 className="flex justify-around text-3xl font-bold p-10">
             {" "}
             Welcome back
@@ -61,24 +66,23 @@ const Login = () => {
           </p>
         </div>
         <form
-          className="flex flex-col max-w-md mx-auto pt-5"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-w-md mx-auto pt-5"
         >
           <div className="mb-5">
             <label
-              htmlFor="firstname"
+              htmlFor="userName"
               className="block text-black font-medium mb-1 ml-4"
-            ></label>{" "}
-            username
+            >username
+            </label>
             <input
-              id="firstName"
+              id="userName"
               type="text"
               placeholder="Type in username or email address"
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
-              {...register("firstName", { required: "username is required" })}
+              {...register("userName", { required: "username is required" })} 
             />
-            {errors.firstName && (
-              <p className="text-red-500">{errors.firstName.message}</p>
+            {errors.userName && (
+              <p className="text-red-500">{errors.userName.message}</p>
             )}
           </div>
 
@@ -86,8 +90,8 @@ const Login = () => {
             <label
               htmlFor="password"
               className="block text-black font-medium mb-1 ml-4"
-            ></label>
-            Password
+            >Password
+            </label>
             <input
               id="password"
               type="text"
@@ -95,7 +99,6 @@ const Login = () => {
               className="h-9 w-[450px] px-2 py-1 outline-transparent bg-white border-gray border-2"
               {...register("password", {
                 required: "password is required",
-                minLength: 5,
               })}
             />
             {errors.password && (
@@ -111,10 +114,11 @@ const Login = () => {
           </button>
           <div className="flex flex-row text-sm font-semibold justify-evenly pt-4">
             <p>Don't Have An Account?</p>
-            <button className="text-orange-500 animate-pulse">Sign Up</button>
+            <Link to="/signup" className="underline">
+              Sign up
+            </Link>
           </div>
         </form>
-      </div>
     </div>
   );
 };

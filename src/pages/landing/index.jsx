@@ -1,4 +1,4 @@
-import { ArrowBigDownDashIcon, ArrowBigDownIcon, SearchIcon, User2Icon } from 'lucide-react'
+import { ArrowBigDownDashIcon, ArrowBigDownIcon, SearchCodeIcon, SearchIcon, SearchXIcon, User2Icon } from 'lucide-react'
 import ParticlesComponent from '../../components/Particles'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,7 +28,7 @@ const Landing = () => {
 
           <span className='flex items-center'>
             <input type="Search" className='relative w-full h-12 border-gray-500 border-2 rounded-3xl pl-10 pr-5 hover:shadow-2xl' placeholder='Search...' />
-            <SearchIcon size={28} className='absolute pl-1 text-[#290F66] font-semibold' />
+            <SearchXIcon size={28} className='absolute pl-1 text-[#290F66] font-semibold' />
           </span>
         </div>
       </div>
